@@ -15,14 +15,20 @@ func _ready():
 	
 	
 func collect_bag():
-	
-	$bag_001.visible = true
-	has_bag = true
+	if has_bag:
+		return false
+	else:
+		$bag_001.visible = true
+		has_bag = true
+		return true
 	
 	
 func remove_bag():
 	$bag_001.visible = false
-	has_bag = false	
+	has_bag = false
+	
+	
+		
 func _physics_process(delta):
 	# Add the gravity.
 	if Input.is_action_just_pressed("fire"):

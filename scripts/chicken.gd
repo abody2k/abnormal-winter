@@ -37,10 +37,12 @@ func _physics_process(delta):
 					$AnimationPlayer.play("chicken_idle")
 					mode = MODES.ATTACKING
 			else:
-				look_at(Vector3( cos(delta) * 30, position.y, sin(delta) * 30))
-				velocity = Vector3( cos(delta) * 30, -10, sin(delta) * 30)
-				$AnimationPlayer.play("chicken_walk")
-				move_and_slide()
+				if !enemies.is_empty():
+					target = enemies[0]
+				#look_at(Vector3( cos(delta) * 30, position.y, sin(delta) * 30))
+				#velocity = Vector3( cos(delta) * 30, -10, sin(delta) * 30)
+				#$AnimationPlayer.play("chicken_walk")
+				#move_and_slide()
 		MODES.ATTACKING:
 			$AnimationPlayer.play("chicken_attack")
 
@@ -57,6 +59,7 @@ func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)
 	if enemy == target:
 		target = null
+		mode = MODES.IDLE
 		if enemies.is_empty():
 			return
 		else :
@@ -75,4 +78,4 @@ func _on_animation_player_animation_finished(anim_name):
 		var bullet = BULLET.instantiate()
 		get_parent().add_child(bullet)
 		bullet.position = $aim.global_position
-		bullet.rotation = $aim. rotation
+		bullet.rotation = $aim.global_rotation

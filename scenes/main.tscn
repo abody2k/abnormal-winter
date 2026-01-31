@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0tp4nkjuq0kl" path="res://3D/factory_house_machine_land_astroid_factory_BaseColor.png" id="11_jscy8"]
 [ext_resource type="PackedScene" uid="uid://e50jiihbq56e" path="res://scenes/land.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bsostuna7dxsh" path="res://scenes/bag.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ddfujy4k4jle" path="res://scenes/tounge.tscn" id="13_trceg"]
 [ext_resource type="Texture2D" uid="uid://c5mvdcs7fili4" path="res://3D/factory_house_machine_land_astroid_landmark_BaseColor.png" id="14_og1vs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
@@ -396,5 +397,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -387.1882, -1.3814805, -3.078
 
 [node name="Area3D6" parent="." unique_id=994107326 instance=ExtResource("12_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -377.16757, -1.3814805, -3.0784225)
+
+[node name="tounge" parent="." unique_id=1034825025 instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -350.19913, -3.1641312, 30.45819)
 
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]

@@ -49,5 +49,15 @@ func _on_detector_body_entered(body):
 
 func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)
-
+	if enemy == target:
+		target = null
+		if enemies.is_empty():
+			return
+		else :
+			target = enemies[0]
+			
 	
+
+
+func _on_detector_body_exited(body):
+	remove_enemy(body)

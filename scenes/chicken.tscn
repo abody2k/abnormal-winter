@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://thvjad8h4i1y"]
 
+[ext_resource type="Script" uid="uid://c8q6j6b7cegyj" path="res://scripts/chicken.gd" id="1_1yv3s"]
 [ext_resource type="Texture2D" uid="uid://tqxll1wxm54r" path="res://3D/chicken_chicken_BaseColor.png" id="1_nutj5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4tbu"]
@@ -626,7 +627,13 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_8lku0"]
 radius = 2.1723125
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=599417448]
+[sub_resource type="SphereShape3D" id="SphereShape3D_1yv3s"]
+radius = 22.827011
+
+[node name="chicken" type="CharacterBody3D" unique_id=599417448]
+collision_layer = 8
+collision_mask = 15
+script = ExtResource("1_1yv3s")
 
 [node name="Armature_002" type="Node3D" parent="." unique_id=2029257446]
 
@@ -754,3 +761,11 @@ libraries/ = SubResource("AnimationLibrary_5sgx4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1782744907]
 shape = SubResource("SphereShape3D_8lku0")
+
+[node name="detector" type="Area3D" parent="." unique_id=2000506482]
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=1322604085]
+shape = SubResource("SphereShape3D_1yv3s")
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]

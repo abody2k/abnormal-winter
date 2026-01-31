@@ -538,12 +538,12 @@ height = 12.179199
 [node name="farmer" type="CharacterBody3D" unique_id=279098992]
 script = ExtResource("1_hkter")
 
-[node name="Cube_009" type="MeshInstance3D" parent="." unique_id=1377979433]
-transform = Transform3D(0, 0, 0.45021904, 0, 0.45021904, 0, -0.45021904, 0, 0, -3.8833368, 0, 0)
-mesh = SubResource("ArrayMesh_sy2r6")
-
 [node name="farmer_rigged" type="Node3D" parent="." unique_id=1177284638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4865341, 0, 0)
+
+[node name="gun" type="MeshInstance3D" parent="farmer_rigged" unique_id=1377979433]
+transform = Transform3D(0, 0, 0.45021904, 0, 0.45021904, 0, -0.45021904, 0, 0, -2.3968027, 0, 0)
+mesh = SubResource("ArrayMesh_sy2r6")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="farmer_rigged" unique_id=1587510929]
 bones/0/name = "Bone"

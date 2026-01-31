@@ -768,5 +768,6 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=1322604085]
 shape = SubResource("SphereShape3D_1yv3s")
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="detector" to="." method="_on_detector_body_exited"]

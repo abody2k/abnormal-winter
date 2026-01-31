@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 50.0
+var SPEED : float = 50.0
 const JUMP_VELOCITY = 4.5
 const BULLET = preload("res://scenes/bullet.tscn")
 
@@ -20,12 +20,15 @@ func collect_bag():
 	else:
 		$bag_001.visible = true
 		has_bag = true
+		SPEED = 20
 		return true
+		
 	
 	
 func remove_bag():
 	$bag_001.visible = false
 	has_bag = false
+	SPEED = 50.0
 	
 	
 		

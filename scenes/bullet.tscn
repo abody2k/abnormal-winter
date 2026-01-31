@@ -53,11 +53,11 @@ collision_mask = 4
 script = ExtResource("1_y25gk")
 
 [node name="bullet" type="MeshInstance3D" parent="." unique_id=264380972]
-transform = Transform3D(0.082180806, 0, 0, 0, -1.5616518e-08, -0.09363198, 0, 0.35726428, -4.092784e-09, 0, 0, 0)
+transform = Transform3D(-3.5922372e-09, -0.35726428, 4.0927834e-09, 0, -1.5616514e-08, -0.093631975, 0.082180806, -1.5616518e-08, 1.7890122e-16, 0.007127315, 0, 0.0071273153)
 mesh = SubResource("ArrayMesh_r37o1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1190230526]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.033192944, 0.01425463)
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.007127315, -0.033192944, 0.0071273143)
 shape = SubResource("CapsuleShape3D_mkf8s")
 
 [node name="Timer" type="Timer" parent="." unique_id=34100752]

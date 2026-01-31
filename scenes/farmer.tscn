@@ -546,7 +546,7 @@ transform = Transform3D(0, 0, 0.45021904, 0, 0.45021904, 0, -0.45021904, 0, 0, -
 mesh = SubResource("ArrayMesh_sy2r6")
 
 [node name="aim" type="Node3D" parent="farmer_rigged/gun" unique_id=344956343]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.105705, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.211, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="farmer_rigged" unique_id=1587510929]
 bones/0/name = "Bone"

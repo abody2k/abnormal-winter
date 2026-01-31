@@ -36,9 +36,13 @@ func _physics_process(delta):
 				else:
 					$AnimationPlayer.play("chicken_idle")
 					mode = MODES.ATTACKING
+			else:
+				look_at(Vector3( cos(delta) * 30, position.y, sin(delta) * 30))
+				velocity = Vector3( cos(delta) * 30, -10, sin(delta) * 30)
+				$AnimationPlayer.play("chicken_walk")
+				move_and_slide()
 		MODES.ATTACKING:
 			$AnimationPlayer.play("chicken_attack")
-
 
 func _on_detector_body_entered(body):
 	if enemies.has(body):
@@ -57,6 +61,7 @@ func remove_enemy(enemy):
 			return
 		else :
 			target = enemies[0]
+		
 			
 	
 

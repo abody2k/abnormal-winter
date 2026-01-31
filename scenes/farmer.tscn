@@ -536,6 +536,7 @@ height = 12.179199
 [sub_resource type="SphereShape3D" id="SphereShape3D_hkter"]
 
 [node name="farmer" type="CharacterBody3D" unique_id=279098992]
+collision_layer = 8
 script = ExtResource("1_hkter")
 
 [node name="farmer_rigged" type="Node3D" parent="." unique_id=1177284638]

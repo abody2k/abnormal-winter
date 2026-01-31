@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b87kjj0c2n4yn" path="res://3D/land_Material_Normal.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b0pbsolav23hr" path="res://3D/factory_house_machine_land_astroid_rock_BaseColor.png" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://ca2owagqlh55l" path="res://3D/factory_house_machine_land_astroid_machine_BaseColor.png" id="5_jbj1t"]
+[ext_resource type="Script" uid="uid://nmo5a1r3b6mx" path="res://scripts/machine.gd" id="6_choun"]
 [ext_resource type="Texture2D" uid="uid://6jmu08q6y4q1" path="res://3D/factory_house_machine_land_astroid_house_BaseColor.png" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cah5nlarut5lx" path="res://scenes/farmer.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://0tp4nkjuq0kl" path="res://3D/factory_house_machine_land_astroid_factory_BaseColor.png" id="11_jscy8"]
@@ -235,7 +236,7 @@ cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("14_og1vs")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_eoxg2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ya4ey"]
 _surfaces = [{
 "aabb": AABB(27.808115, -1.3654346, -103.174866, 4, 1, 4),
 "format": 34896613377,
@@ -267,7 +268,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("2vwV0SQDiNza/BXR2vxxsIro//+K6NjQJAMV0dr8teQkAxXRJANN8iQD6S4kA03y2vzpLtr8cbDa/OkuJAOI3CQD6S7a/LXkJAPpLtr8UrokAxXRJAOs9iQDFdHa/LzXJAPpLiQD99ra/Oku2vx5xiQDFdHa/HnG2vwV0dr8bMokA+ku2vxsyiQD6S4kA6PZ2vwV0SQDo9kkAxXRJAP//9r86S4kA///2vzpLiQDrPba/BXR2vxSutr8FdEkA/fa2vzpLtr8vNd0FwAAdBce2nQXAACK6FLViugAAIro2NCK6AAAdBdX1XQX//+K6FLVdBf//3QXHtpE9G3zRPR9xIro//90F1fVRPRt80T0XdC6C5EMRPQN2ET0kQxE9H3EuguRDLoLI+VE9JEMugte1wAA0l3//+7AAADSXQAA2+UAACyiAABB7QAALKL//47Lugtt87oLI+VE9G3zugte17oLbfNE9A3YRPSRDLoLi+q6C5EMugve0wAA0l0AAFXk///SXQAAe+///yyiAABV5AAALKIAAHvvugtt87oLi+pE9G3zugve0///0l0AAEHt///SXf//jsv//yyi///uwP//LKIAANvluguRDET0XdBE9JEMRPRgy///0l3//7/FAADSXf//ocYAACyi//+/xf//LKL//6HGugtt80T0YMvtr8MfLcVVF9HTnifk8BMmWeUrQ9Q8WmWqaC5FPGDtL+xZ5HBOSTiOmlvpudN09qoTODGtAoB5Sfx/hbaotPx/VksCgOpB5sEUvhg+h0+mrXSwWVJkpBVGsLbGcevHzVIriwhVvlKdVjNVnllhWNFTMFUuUZ7Zyyqd1kEt5s+NIC7Rzyrlry2YVFbLY3Ff508pS7VaxFaTRbJchZloRUuya1Brt4JofKC12tU0k8U7KcvjqilRKtjRezYKzulIx7dKs1lNFbc3SLRMpbKt1SYug8n0MZOvk0h8l4JfTKN5Zpa6s00ZUNFn6GZLTs2V7FssXKeVMWoSpNKjV2oWmbOx")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_eoxg2")
+shadow_mesh = SubResource("ArrayMesh_ya4ey")
 
 [sub_resource type="Environment" id="Environment_85g3d"]
 background_mode = 1
@@ -322,9 +323,10 @@ shape = SubResource("ConcavePolygonShape3D_tipki")
 transform = Transform3D(120, 0, 0, 0, 120, 0, 0, 0, 120, 355.453, -134.60762, 260.47333)
 mesh = SubResource("ArrayMesh_tbgi4")
 
-[node name="machine" type="MeshInstance3D" parent="." unique_id=1547196998]
+[node name="machine" type="MeshInstance3D" parent="." unique_id=1547196998 groups=["machine"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -376.11478, 0.29883528, 41.94715)
 mesh = SubResource("ArrayMesh_2f3dj")
+script = ExtResource("6_choun")
 
 [node name="house" type="MeshInstance3D" parent="." unique_id=1202872918]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -460.07968, 35.970657, 23.57531)

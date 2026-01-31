@@ -47,7 +47,7 @@ shadow_mesh = SubResource("ArrayMesh_vebmb")
 radius = 0.10498047
 height = 0.76904297
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=376248127]
+[node name="bullet" type="CharacterBody3D" unique_id=376248127]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_y25gk")

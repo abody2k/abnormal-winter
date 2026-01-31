@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cah5nlarut5lx"]
 
 [ext_resource type="Texture2D" uid="uid://dyra8ws0akxe7" path="res://3D/farmer_Material_1.png" id="1_go23t"]
+[ext_resource type="Script" uid="uid://bioh70up8se6x" path="res://scripts/farmer.gd" id="1_hkter"]
 [ext_resource type="Texture2D" uid="uid://dc46w4sfo2vaf" path="res://3D/farmer_gun_BaseColor.png" id="4_wv3kr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s00ie"]
@@ -528,13 +529,19 @@ _data = {
 &"move_hero": SubResource("Animation_67vvv")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2qlof"]
+radius = 3.5854492
+height = 12.179199
+
 [node name="farmer" type="CharacterBody3D" unique_id=279098992]
+script = ExtResource("1_hkter")
 
 [node name="Cube_009" type="MeshInstance3D" parent="." unique_id=1377979433]
-transform = Transform3D(0, 0, 0.45021904, 0, 0.45021904, 0, -0.45021904, 0, 0, -2.3968027, 0, 0)
+transform = Transform3D(0, 0, 0.45021904, 0, 0.45021904, 0, -0.45021904, 0, 0, -3.8833368, 0, 0)
 mesh = SubResource("ArrayMesh_sy2r6")
 
 [node name="farmer_rigged" type="Node3D" parent="." unique_id=1177284638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4865341, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="farmer_rigged" unique_id=1587510929]
 bones/0/name = "Bone"
@@ -718,3 +725,10 @@ skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=617580740]
 libraries/ = SubResource("AnimationLibrary_loie6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1797746252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45629883, 0)
+shape = SubResource("CapsuleShape3D_2qlof")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1289404808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.549409, 16.027416)

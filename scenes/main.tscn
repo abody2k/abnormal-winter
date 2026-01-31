@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0pbsolav23hr" path="res://3D/factory_house_machine_land_astroid_rock_BaseColor.png" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://ca2owagqlh55l" path="res://3D/factory_house_machine_land_astroid_machine_BaseColor.png" id="5_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://6jmu08q6y4q1" path="res://3D/factory_house_machine_land_astroid_house_BaseColor.png" id="8_0ld40"]
+[ext_resource type="PackedScene" uid="uid://cah5nlarut5lx" path="res://scenes/farmer.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://0tp4nkjuq0kl" path="res://3D/factory_house_machine_land_astroid_factory_BaseColor.png" id="11_jscy8"]
 [ext_resource type="Texture2D" uid="uid://c5mvdcs7fili4" path="res://3D/factory_house_machine_land_astroid_landmark_BaseColor.png" id="14_og1vs"]
 
@@ -342,3 +343,6 @@ shape = SubResource("ConcavePolygonShape3D_a8y0u")
 [node name="farm" type="MeshInstance3D" parent="." unique_id=848467366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -398.4624, -2.0428085, 111.77611)
 mesh = SubResource("ArrayMesh_tel4y")
+
+[node name="farmer" parent="." unique_id=279098992 instance=ExtResource("9_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6546779, 7.721596, 70.17981)

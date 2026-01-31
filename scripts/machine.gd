@@ -17,3 +17,9 @@ func _ready():
 
 func _process(delta):
 	pass
+
+
+func _on_area_3d_body_entered(body):
+	if body.has_bag:
+		body.remove_bag()
+		

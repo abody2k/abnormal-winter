@@ -8,6 +8,7 @@ const BULLET = preload("res://scenes/bullet.tscn")
 var has_bag = false
 
 
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -18,6 +19,10 @@ func collect_bag():
 	$bag_001.visible = true
 	has_bag = true
 	
+	
+func remove_bag():
+	$bag_001.visible = false
+	has_bag = false	
 func _physics_process(delta):
 	# Add the gravity.
 	if Input.is_action_just_pressed("fire"):

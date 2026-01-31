@@ -24,7 +24,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "backward", "forward")
-	$farmer_rigged.rotate_y(input_dir.x * delta * 10)
+	$farmer_rigged.rotate_y(input_dir.x * delta * -10)
 	velocity = -$farmer_rigged.basis.z * SPEED * input_dir.y
 	move_and_slide()
 	if input_dir.y !=0:
@@ -34,10 +34,3 @@ func _physics_process(delta):
 		
 		
 		
-
-func _input(event):
-	return
-	if event is InputEventMouseMotion:
-		
-		print(event as InputEventMouseMotion)
-		pass

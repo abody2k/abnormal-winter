@@ -50,7 +50,7 @@ radius = 2.1721153
 
 [node name="bomb" type="CharacterBody3D" unique_id=142733957]
 collision_layer = 2
-collision_mask = 6
+collision_mask = 4
 script = ExtResource("1_vpdcx")
 
 [node name="bomb" type="MeshInstance3D" parent="." unique_id=234797172]

@@ -24,8 +24,8 @@ func _process(delta):
 func update_land(land):
 	
 	if no_of_bags > 0:
-		land.grow(0)
-		#land.grow(randi_range(0,2))
+		#land.grow(0)
+		land.grow(randi_range(0,1))
 		no_of_bags -=1
 		
 		
@@ -34,7 +34,7 @@ func plant_something():
 	
 	for land in lands:
 		if land.is_idle():
-			land.grow(0)
+			land.grow(randi_range(0,1))
 			no_of_bags -=1
 			return
 			

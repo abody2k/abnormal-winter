@@ -8,6 +8,7 @@ enum STATES {IDLE, GROWING}
 var state : STATES = STATES.IDLE
 
 const PLANT = preload("res://scenes/plant.tscn")
+const CHICKEN = preload("res://scenes/chicken.tscn")
 func is_idle():
 	if state == STATES.IDLE:
 		return true
@@ -15,7 +16,9 @@ func is_idle():
 		return false
 		
 
-func grow():
+var animal = 0
+func grow(type):
+	animal = type
 	state = STATES.GROWING
 	var plant = PLANT.instantiate()
 	add_child(plant)
@@ -25,8 +28,13 @@ func grow():
 	
 	
 func finished():
+	state = STATES.IDLE
 	get_tree().call_group("machine","update_land",self)
-
+	match  animal:
+		0:
+			var chicken = CHICKEN.instantiate()
+			get_parent().add_child(chicken)
+			chicken.position = position
 	
 func _ready():
 	get_tree().call_group("machine","add_land",self)

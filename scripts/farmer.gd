@@ -8,6 +8,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 func _physics_process(delta):
 	# Add the gravity.
+	if Input.is_action_just_pressed("fire"):
+		#fire a bullet
+		pass
 	var x = Input.get_last_mouse_velocity()
 	$arm.rotate_y(x.x * delta * -0.01)
 	if not is_on_floor():
@@ -17,9 +20,7 @@ func _physics_process(delta):
 		return
 		
 	# Handle jump.
-	if Input.is_action_just_pressed("fire"):
-		#fire a bullet
-		pass
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

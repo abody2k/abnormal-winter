@@ -733,7 +733,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45629883, 0)
 shape = SubResource("CapsuleShape3D_2qlof")
 
 [node name="arm" type="SpringArm3D" parent="." unique_id=120443057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.549, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.549, 0)
 shape = SubResource("SphereShape3D_hkter")
 spring_length = 17.0
 

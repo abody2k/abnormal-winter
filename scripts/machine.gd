@@ -20,7 +20,14 @@ func _ready():
 func _process(delta):
 	pass
 
-
+func plant_something():
+	
+	for land in lands:
+		if land.is_idle():
+			land.grow(randi_range(0,2))
+			no_of_bags -=1
+			return
+			
 func _on_area_3d_body_entered(body):
 	if body.has_bag:
 		body.remove_bag()

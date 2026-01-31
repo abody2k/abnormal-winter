@@ -10,7 +10,11 @@ func is_idle():
 		return true
 	else:
 		return false
-
+func grow():
+	
+	state = STATES.GROWING
+	
+	
 func _ready():
 	get_tree().call_group("machine","add_land",self)
 	pass 

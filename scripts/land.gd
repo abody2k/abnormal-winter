@@ -10,8 +10,9 @@ func is_idle():
 		return true
 	else:
 		return false
+		
+
 func grow():
-	
 	state = STATES.GROWING
 	
 	

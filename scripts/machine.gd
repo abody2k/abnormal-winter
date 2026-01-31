@@ -19,6 +19,15 @@ func _ready():
 
 func _process(delta):
 	pass
+	
+	
+func update_land(land):
+	
+	if no_of_bags > 0:
+		land.grow(randi_range(0,2))
+		no_of_bags -=1
+		
+		
 
 func plant_something():
 	

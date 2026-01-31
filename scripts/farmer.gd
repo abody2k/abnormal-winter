@@ -4,9 +4,12 @@ extends CharacterBody3D
 const SPEED = 50.0
 const JUMP_VELOCITY = 4.5
 
-
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 func _physics_process(delta):
 	# Add the gravity.
+	var x = Input.get_last_mouse_velocity()
+	$arm.rotate_y(x.x * delta * -0.01)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		move_and_slide()
@@ -28,3 +31,13 @@ func _physics_process(delta):
 		$AnimationPlayer.play("move_hero")
 	else :
 		$AnimationPlayer.play("idle")
+		
+		
+		
+
+func _input(event):
+	return
+	if event is InputEventMouseMotion:
+		
+		print(event as InputEventMouseMotion)
+		pass

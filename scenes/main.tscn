@@ -271,6 +271,7 @@ shadow_mesh = SubResource("ArrayMesh_eoxg2")
 
 [sub_resource type="Environment" id="Environment_85g3d"]
 background_mode = 1
+background_color = Color(1, 1, 1, 1)
 
 [node name="main" type="Node3D" unique_id=780465373]
 

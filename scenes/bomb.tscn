@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cucmij8i45j63"]
 
 [ext_resource type="Texture2D" uid="uid://dd0r0fkpmnmke" path="res://3D/bu;;et_bomb_Material_4.png" id="1_j15uc"]
+[ext_resource type="Script" uid="uid://bvtxv65r5e0cy" path="res://scenes/bomb.gd" id="1_vpdcx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4bve"]
 resource_name = "Material.009"
@@ -42,8 +43,30 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hnkdg")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_j15uc"]
+radius = 2.1721153
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_84slv"]
+
 [node name="bomb" type="CharacterBody3D" unique_id=142733957]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_vpdcx")
 
 [node name="bomb" type="MeshInstance3D" parent="." unique_id=234797172]
 transform = Transform3D(0.5665833, 0, 0, 0, 0.5665833, 0, 0, 0, 0.5665833, 0, 0, 0)
 mesh = SubResource("ArrayMesh_1hf1o")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1602884038]
+collision_layer = 2
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=327540669]
+shape = SubResource("SphereShape3D_j15uc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1841638229]
+shape = SubResource("SphereShape3D_84slv")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -19,6 +19,11 @@ var target : CharacterBody3D = null
 @export var SPEED = 20.0
 @export var distance = 10.0
 
+
+const BULLET = preload("res://scenes/bullet.tscn")
+
+
+
 func _physics_process(delta):
 	match mode:
 		MODES.IDLE:
@@ -62,4 +67,7 @@ func _on_detector_body_exited(body):
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "chicken_attack":
-		pass
+		var bullet = BULLET.instantiate()
+		get_parent().add_child(bullet)
+		bullet.position = $aim.global_position
+		bullet.rotation = $aim. rotation

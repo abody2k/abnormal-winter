@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://6jmu08q6y4q1" path="res://3D/factory_house_machine_land_astroid_house_BaseColor.png" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cah5nlarut5lx" path="res://scenes/farmer.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://0tp4nkjuq0kl" path="res://3D/factory_house_machine_land_astroid_factory_BaseColor.png" id="11_jscy8"]
+[ext_resource type="PackedScene" uid="uid://e50jiihbq56e" path="res://scenes/land.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bsostuna7dxsh" path="res://scenes/bag.tscn" id="12_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://c5mvdcs7fili4" path="res://3D/factory_house_machine_land_astroid_landmark_BaseColor.png" id="14_og1vs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
@@ -332,6 +334,8 @@ mesh = SubResource("ArrayMesh_2f3dj")
 script = ExtResource("6_choun")
 
 [node name="Area3D" type="Area3D" parent="machine" unique_id=1485056672]
+collision_layer = 0
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="machine/Area3D" unique_id=64177099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.441193, 11.417908, -14.178375)
@@ -357,6 +361,7 @@ shape = SubResource("ConcavePolygonShape3D_a8y0u")
 
 [node name="farm" type="MeshInstance3D" parent="." unique_id=848467366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -398.4624, -2.0428085, 111.77611)
+visible = false
 mesh = SubResource("ArrayMesh_tel4y")
 
 [node name="farmer" parent="." unique_id=279098992 instance=ExtResource("9_85g3d")]
@@ -364,5 +369,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6546779, 7.721596, 70.1798
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=591892667]
 environment = SubResource("Environment_85g3d")
+
+[node name="farmland" parent="." unique_id=1237019634 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -369.0719, -2.8673568, 16.980219)
+
+[node name="farmland2" parent="." unique_id=96261249 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -369.0719, -2.8673568, 22.244995)
+
+[node name="farmland3" parent="." unique_id=1709212040 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -369.0719, -2.8673568, 28.070402)
+
+[node name="Area3D" parent="." unique_id=6201389 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -398.24786, -1.3814805, -9.434661)
+
+[node name="Area3D2" parent="." unique_id=936580564 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -387.1882, -1.3814805, -9.434661)
+
+[node name="Area3D3" parent="." unique_id=968948558 instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -377.16757, -1.3814805, -9.434661)
 
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]

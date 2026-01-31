@@ -48,11 +48,10 @@ func _physics_process(delta):
 		$AnimationPlayer.play("idle")
 		return
 		
-	# Handle jump.
+
 	
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	var input_dir = Input.get_vector("left", "right", "backward", "forward")
 	$farmer_rigged.rotate_y(input_dir.x * delta * -10)
 	velocity = -$farmer_rigged.basis.z * SPEED * input_dir.y

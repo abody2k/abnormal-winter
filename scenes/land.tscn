@@ -43,7 +43,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eoxg2")
 
-[node name="Node3D" type="Node3D" unique_id=1237019634 groups=["land"]]
+[node name="farmland" type="Node3D" unique_id=1237019634 groups=["land"]]
 script = ExtResource("1_cthhe")
 
 [node name="farm" type="MeshInstance3D" parent="." unique_id=39969690]

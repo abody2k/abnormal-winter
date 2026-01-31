@@ -76,6 +76,8 @@ func _on_detector_body_exited(body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "cow_attacking":
 		var bullet = BULLET.instantiate()
+		if !target: 
+			return
 		bullet.target=target.position
 		get_parent().add_child(bullet)
 		bullet.position = $aim.global_position

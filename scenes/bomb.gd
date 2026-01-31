@@ -18,8 +18,12 @@ func _physics_process(delta):
 	velocity.y = velocity.y + delta * (-9.8)
 	var obj = move_and_collide(velocity* delta)
 	if obj :
-		print("hit something")
-		queue_free()
+		
+		$Area3D.monitoring= true
 	
 func _on_area_3d_body_entered(body):
+	print("hola")
+	body.queue_free()
+	queue_free()
+	
 	pass # Replace with function body.

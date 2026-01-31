@@ -533,6 +533,8 @@ _data = {
 radius = 3.5854492
 height = 12.179199
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hkter"]
+
 [node name="farmer" type="CharacterBody3D" unique_id=279098992]
 script = ExtResource("1_hkter")
 
@@ -730,5 +732,10 @@ libraries/ = SubResource("AnimationLibrary_loie6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45629883, 0)
 shape = SubResource("CapsuleShape3D_2qlof")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1289404808]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.549409, 16.027416)
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=120443057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.549, 0)
+shape = SubResource("SphereShape3D_hkter")
+spring_length = 17.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1289404808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)

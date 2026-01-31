@@ -269,6 +269,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eoxg2")
 
+[sub_resource type="Environment" id="Environment_85g3d"]
+background_mode = 1
+
 [node name="main" type="Node3D" unique_id=780465373]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=979879361]
@@ -346,3 +349,6 @@ mesh = SubResource("ArrayMesh_tel4y")
 
 [node name="farmer" parent="." unique_id=279098992 instance=ExtResource("9_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6546779, 7.721596, 70.17981)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=591892667]
+environment = SubResource("Environment_85g3d")

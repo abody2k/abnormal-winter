@@ -80,3 +80,4 @@ func _on_animation_player_animation_finished(anim_name):
 		get_parent().add_child(bullet)
 		bullet.position = $aim.global_position
 		bullet.rotation = $aim.global_rotation
+		bullet.compute_xz()

@@ -3,10 +3,10 @@ extends CharacterBody3D
 
 
 var target : Vector3 = Vector3()
-const TIME = 3.4 
+const TIME = 2.0 
 
-func _ready():
-	compute_xz()
+#func _ready():
+	#compute_xz()
 	
 func compute_xz():
 	#target = global_position + Vector3(10,10,10)

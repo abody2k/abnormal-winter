@@ -5,6 +5,8 @@ const SPEED = 50.0
 const JUMP_VELOCITY = 4.5
 const BULLET = preload("res://scenes/bullet.tscn")
 
+var has_bag = false
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -14,6 +16,7 @@ func _ready():
 func collect_bag():
 	
 	$bag_001.visible = true
+	has_bag = true
 	
 func _physics_process(delta):
 	# Add the gravity.

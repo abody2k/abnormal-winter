@@ -326,7 +326,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -376.11478, 0.29883528, 41.94
 mesh = SubResource("ArrayMesh_2f3dj")
 
 [node name="house" type="MeshInstance3D" parent="." unique_id=1202872918]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -460.07968, 43.729782, 23.57531)
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -460.07968, 35.970657, 23.57531)
 mesh = SubResource("ArrayMesh_yq6so")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house" unique_id=832118917]
@@ -335,7 +335,7 @@ mesh = SubResource("ArrayMesh_yq6so")
 shape = SubResource("ConcavePolygonShape3D_85g3d")
 
 [node name="Cube_003" type="MeshInstance3D" parent="." unique_id=1878571156]
-transform = Transform3D(-59.622444, 0, 6.720396, 0, 59.999996, 0, -6.720396, 0, -59.622444, 23.68991, 2.1374817, -544.28314)
+transform = Transform3D(-59.622444, 0, 6.720396, 0, 59.999996, 0, -6.720396, 0, -59.622444, 23.68991, -5.621643, -544.28314)
 mesh = SubResource("ArrayMesh_fv21b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_003" unique_id=237458364]

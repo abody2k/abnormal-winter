@@ -24,14 +24,7 @@ func _physics_process(delta):
 	$farmer_rigged.rotate_y(input_dir.x * delta * 10)
 	velocity = -$farmer_rigged.basis.z * SPEED * input_dir.y
 	move_and_slide()
-	$AnimationPlayer.play("move_hero")
-	return
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+	if input_dir.y !=0:
+		$AnimationPlayer.play("move_hero")
+	else :
+		$AnimationPlayer.play("idle")

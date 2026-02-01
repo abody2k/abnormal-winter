@@ -6,12 +6,17 @@ const JUMP_VELOCITY = 4.5
 signal death
 
 
-enum MODES{IDLE,WALKING, ATTACKING}
+enum MODES{IDLE,WALKING, CHASING, ATTACKING}
 
 var mode : MODES = MODES.WALKING
 
 var current_target = Vector3.ZERO
 var index = 0
+
+
+var enemies = []
+var target : CharacterBody3D = null 
+
 
 func _ready():
 	print((get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index))
@@ -45,3 +50,32 @@ func _physics_process(delta):
 
 func _exit_tree():
 	death.emit(self)
+
+
+func _on_detector_body_entered(body):
+	if target:
+		mode = MODES.CHASING
+		
+	if enemies.has(target):
+		return
+	enemies.append(body)
+	
+	
+	if !target:
+		target = body
+
+func remove_enemy(enemy):
+	enemies = enemies.filter(func (e): return enemy != e)
+	if enemy == target:
+		target = null
+		mode = MODES.IDLE
+		if enemies.is_empty():
+			return
+		else :
+			target = enemies[0]
+			
+			
+func _on_detector_body_exited(body):
+	remove_enemy(body)
+	
+	

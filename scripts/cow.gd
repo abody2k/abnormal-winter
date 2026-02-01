@@ -22,7 +22,7 @@ var target : CharacterBody3D = null
 
 const BULLET = preload("res://scenes/bomb.tscn")
 
-
+signal death
 
 func _physics_process(delta):
 	match mode:
@@ -86,3 +86,7 @@ func _on_animation_player_animation_finished(anim_name):
 		bullet.position = $aim.global_position
 		bullet.rotation = $aim.global_rotation
 		bullet.compute_xz()
+
+
+func _exit_tree():
+	death.emit(self)

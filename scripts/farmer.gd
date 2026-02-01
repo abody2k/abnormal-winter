@@ -7,6 +7,8 @@ const BULLET = preload("res://scenes/bullet.tscn")
 
 var has_bag = false
 
+signal death
+
 
 
 func _ready():
@@ -63,3 +65,6 @@ func _physics_process(delta):
 		
 		
 		
+
+func _exit_tree():
+	death.emit(self)

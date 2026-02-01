@@ -204,6 +204,9 @@ height = 19.07373
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb06d"]
 size = Vector3(158.55899, 41.19934, 125.68384)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fb06d"]
+radius = 3.586224
+
 [node name="worm" type="CharacterBody3D" unique_id=932080827]
 collision_layer = 4
 collision_mask = 15
@@ -282,5 +285,22 @@ collision_mask = 24
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7650757, 20.09967, 8.050171)
 shape = SubResource("BoxShape3D_fb06d")
 
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=325406187]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 18.854622, 0)
+bone_name = "Bone.005"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_004/Skeleton3D")
+
+[node name="enemy" type="Area3D" parent="BoneAttachment3D" unique_id=107364143]
+collision_mask = 24
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D/enemy" unique_id=1609166326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.96172905, -0.64115524)
+shape = SubResource("SphereShape3D_fb06d")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="detector" to="." method="_on_detector_body_exited"]
+[connection signal="body_entered" from="BoneAttachment3D/enemy" to="." method="_on_area_3d_body_entered"]

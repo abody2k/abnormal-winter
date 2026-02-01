@@ -14,6 +14,7 @@ var current_target = Vector3.ZERO
 var index = 0
 
 func _ready():
+	print((get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index))
 	current_target = (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_in(index)
 	current_target.y = position.y
 

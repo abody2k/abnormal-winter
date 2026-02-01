@@ -53,7 +53,10 @@ func _physics_process(delta):
 				mode = MODES.ATTACKING
 			else:
 				look_at(Vector3(target.position.x,position.y,target.position.z))
-				velocity =( -basis.z + Vector3.DOWN ) * SPEED 
+				velocity =( -basis.z + Vector3.DOWN ) * SPEED
+				var dir = (Vector3(target.position.x,position.y,target.position.z) - position).normalized()
+				dir.y=0
+				rotation.y = atan2(dir.x,dir.z)
 				move_and_slide()
 				
 				

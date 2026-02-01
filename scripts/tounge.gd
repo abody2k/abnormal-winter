@@ -88,6 +88,7 @@ func _on_detector_body_entered(body):
 		
 	if enemies.has(target):
 		return
+	body.death.connect(remove_enemy)
 	enemies.append(body)
 	
 	

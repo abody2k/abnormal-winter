@@ -48,8 +48,8 @@ func _physics_process(delta):
 					return
 				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 		MODES.CHASING:
-			
-			if position.distance_to(target.position) < 15:
+			$AnimationPlayer.play("worm_moving")
+			if position.distance_to(target.position) < 20:
 				mode = MODES.ATTACKING
 			else:
 				look_at(Vector3(target.position.x,position.y,target.position.z))
@@ -59,12 +59,15 @@ func _physics_process(delta):
 				rotation.y = atan2(dir.x,dir.z)
 				move_and_slide()
 		MODES.ATTACKING:
-			if position.distance_to(target.position) >= 15:
+			if position.distance_to(target.position) >= 20:
 				mode = MODES.CHASING
 			else:
-				var dir = (Vector3(target.position.x,position.y,target.position.z) - position).normalized()
+				print("HEREEEEEEEE")
+				var dir = (target.position - position).normalized()
 				dir.y=0
 				rotation.y = atan2(dir.x,dir.z)
+				
+				print("attaxkinf")
 				$BoneAttachment3D/enemy.monitoring = true
 				$AnimationPlayer.play("worm_attack")
 				

@@ -44,7 +44,7 @@ func _physics_process(delta):
 					return
 				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 		MODES.CHASING:
-			
+			$AnimationPlayer.play("tounge_move")
 			if position.distance_to(target.position) < 15:
 				mode = MODES.ATTACKING
 			else:

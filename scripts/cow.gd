@@ -39,11 +39,15 @@ func _physics_process(delta):
 			else:
 				if !enemies.is_empty():
 					target = enemies[0]
+				velocity = ( Vector3.DOWN * 10) * SPEED 
+				move_and_slide()
 				#look_at(Vector3( cos(delta) * 30, position.y, sin(delta) * 30))
 				#velocity = Vector3( cos(delta) * 30, -10, sin(delta) * 30)
 				#$AnimationPlayer.play("chicken_walk")
 				#move_and_slide()
 		MODES.ATTACKING:
+			velocity = (Vector3.DOWN * 10) * SPEED 
+			move_and_slide()
 			if !target:
 				return
 			look_at(target.position)

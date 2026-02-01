@@ -20,7 +20,6 @@ func _physics_process(delta):
 		$Area3D.monitoring= true
 	
 func _on_area_3d_body_entered(body):
-	print("hola")
 	body.queue_free()
 	queue_free()
 	

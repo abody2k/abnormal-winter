@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://e50jiihbq56e" path="res://scenes/land.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bsostuna7dxsh" path="res://scenes/bag.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ddfujy4k4jle" path="res://scenes/tounge.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://d11i4s3gascsk" path="res://scenes/worm.tscn" id="14_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c5mvdcs7fili4" path="res://3D/factory_house_machine_land_astroid_landmark_BaseColor.png" id="14_og1vs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
@@ -419,5 +420,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.6973, -45.422752, -491.2
 [node name="path" type="Path3D" parent="." unique_id=323992303 groups=["path"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.75586, -33.256306, -406.31937)
 curve = SubResource("Curve3D_a8y0u")
+
+[node name="worm" parent="." unique_id=932080827 instance=ExtResource("14_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -407.86182)
+
+[node name="worm2" parent="." unique_id=1368103292 instance=ExtResource("14_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -497.99426)
+
+[node name="worm3" parent="." unique_id=1727675650 instance=ExtResource("14_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -367.85242)
+
+[node name="worm4" parent="." unique_id=2132354486 instance=ExtResource("14_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -457.98486)
 
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]

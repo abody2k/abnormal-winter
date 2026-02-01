@@ -18,7 +18,7 @@ func collect_bag():
 	if has_bag:
 		return false
 	else:
-		$bag_001.visible = true
+		$farmer_rigged/bag_001.visible = true
 		has_bag = true
 		SPEED = 20
 		return true
@@ -26,7 +26,7 @@ func collect_bag():
 	
 	
 func remove_bag():
-	$bag_001.visible = false
+	$farmer_rigged/bag_001.visible = false
 	has_bag = false
 	SPEED = 50.0
 	

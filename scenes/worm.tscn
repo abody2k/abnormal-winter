@@ -202,9 +202,12 @@ radius = 4.5009766
 height = 19.07373
 
 [node name="worm" type="CharacterBody3D" unique_id=932080827]
+collision_layer = 4
+collision_mask = 15
 script = ExtResource("1_ttset")
 
 [node name="Armature_004" type="Node3D" parent="." unique_id=998241328]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature_004" unique_id=1530326888]
 bones/0/name = "Bone"

@@ -40,11 +40,10 @@ func _physics_process(delta):
 			else:
 				if !enemies.is_empty():
 					target = enemies[0]
-				#look_at(Vector3( cos(delta) * 30, position.y, sin(delta) * 30))
-				#velocity = Vector3( cos(delta) * 30, -10, sin(delta) * 30)
-				#$AnimationPlayer.play("chicken_walk")
-				#move_and_slide()
+
+
 		MODES.ATTACKING:
+			look_at(target.position)
 			$AnimationPlayer.play("chicken_attack")
 
 func _on_detector_body_entered(body):
@@ -71,7 +70,8 @@ func remove_enemy(enemy):
 
 
 func _on_detector_body_exited(body):
-	remove_enemy(body)
+	pass
+	#remove_enemy(body)
 
 
 func _on_animation_player_animation_finished(anim_name):

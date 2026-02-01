@@ -46,7 +46,7 @@ func _physics_process(delta):
 	$arm.rotate_y(x.x * delta * -0.01)
 	
 	if not is_on_floor():
-		velocity = get_gravity() * 10
+		velocity = get_gravity() * 2
 		move_and_slide()
 		return
 		

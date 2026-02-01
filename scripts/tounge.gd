@@ -46,7 +46,6 @@ func _physics_process(delta):
 		MODES.CHASING:
 			$BoneAttachment3D/enemy.monitoring = false
 			$AnimationPlayer.play("tounge_move")
-			print(position.distance_to(target.position))
 			if position.distance_to(target.position) < 19:
 				mode = MODES.ATTACKING
 				
@@ -61,10 +60,8 @@ func _physics_process(delta):
 				
 				
 		MODES.ATTACKING:
-			print("heeeee")
 			if position.distance_to(target.position) >= 19:
 				mode = MODES.CHASING
-				print("5555555")
 			else:
 				var dir = (Vector3(target.position.x,position.y,target.position.z) - position).normalized()
 				dir.y=0
@@ -72,7 +69,6 @@ func _physics_process(delta):
 				#$Attack.start()
 				var x = create_tween()
 				#$BoneAttachment3D/enemy
-				print("hoooooo")
 				x.tween_callback(enabled).set_delay(0.2)
 				$AnimationPlayer.play("tounge_attack")
 				

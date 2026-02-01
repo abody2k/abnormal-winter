@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 
 var target : Vector3 = Vector3()
-const TIME = 4.0 
+const TIME = 2.0 
 
 	
 func compute_xz():

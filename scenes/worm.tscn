@@ -201,6 +201,9 @@ _data = {
 radius = 4.5009766
 height = 19.07373
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fb06d"]
+size = Vector3(158.55899, 41.19934, 125.68384)
+
 [node name="worm" type="CharacterBody3D" unique_id=932080827]
 collision_layer = 4
 collision_mask = 15
@@ -271,3 +274,10 @@ libraries/ = SubResource("AnimationLibrary_he5f4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911454079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.536865, 0)
 shape = SubResource("CapsuleShape3D_tdamb")
+
+[node name="detector" type="Area3D" parent="." unique_id=876439399]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=17941955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7650757, 20.09967, 8.050171)
+shape = SubResource("BoxShape3D_fb06d")

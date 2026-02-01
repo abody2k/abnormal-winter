@@ -97,16 +97,18 @@ func remove_enemy(enemy):
 			
 			
 func _on_detector_body_exited(body):
+	return
 	remove_enemy(body)
 	
 	
 
 
 func _on_area_3d_body_entered(body):
-	print("got hit!!!!!!!!!")
+	remove_enemy(body)
+	body.queue_free()
 
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "worm_attack":
 		$BoneAttachment3D/enemy.monitoring = false
-		pass
+		

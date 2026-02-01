@@ -631,11 +631,13 @@ radius = 2.1723125
 radius = 22.827011
 
 [node name="chicken" type="CharacterBody3D" unique_id=599417448]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_1yv3s")
 
 [node name="Armature_002" type="Node3D" parent="." unique_id=2029257446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0305915, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature_002" unique_id=1299492218]
 bones/0/name = "Bone"
@@ -760,16 +762,18 @@ skeleton = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_5sgx4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1782744907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0305915, 0)
 shape = SubResource("SphereShape3D_8lku0")
 
 [node name="detector" type="Area3D" parent="." unique_id=2000506482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0305915, 0)
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=1322604085]
 shape = SubResource("SphereShape3D_1yv3s")
 
 [node name="aim" type="Node3D" parent="." unique_id=1888020229]
-transform = Transform3D(-0.044909686, 0, 0.998991, 0.115254164, 0.9933227, 0.00518125, -0.9923203, 0.11537056, -0.044609815, 0, 1.4059765, -3.661122)
+transform = Transform3D(-0.044909686, 0, 0.998991, 0.115254164, 0.9933227, 0.00518125, -0.9923203, 0.11537056, -0.044609815, 0, 3.4230092, -3.4268515)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]

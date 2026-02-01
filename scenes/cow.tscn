@@ -991,11 +991,13 @@ height = 9.182983
 radius = 76.73522
 
 [node name="cow" type="CharacterBody3D" unique_id=846567232]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 8
 collision_mask = 29
 script = ExtResource("1_8skmv")
 
 [node name="Armature_003" type="Node3D" parent="." unique_id=400482713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1857896, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature_003" unique_id=485353523]
 bones/0/name = "Bone"
@@ -1216,17 +1218,18 @@ skeleton = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_iklcx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=496122934]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.479, -0.87552)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.7067895, -0.87552)
 shape = SubResource("CapsuleShape3D_sxvfc")
 
 [node name="detector" type="Area3D" parent="." unique_id=1744304433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1857896, 0)
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=650908169]
 shape = SubResource("SphereShape3D_xabja")
 
 [node name="aim" type="Node3D" parent="." unique_id=724442297]
-transform = Transform3D(-0.044909686, 0, 0.998991, 0.115254164, 0.9933227, 0.00518125, -0.9923203, 0.11537056, -0.044609815, 0, 5.012563, -2.277764)
+transform = Transform3D(-0.044909686, 0, 0.998991, 0.115254164, 0.9933227, 0.00518125, -0.9923203, 0.11537056, -0.044609815, 0, 8.198353, -2.277764)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]

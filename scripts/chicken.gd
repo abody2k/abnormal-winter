@@ -31,7 +31,7 @@ func _physics_process(delta):
 			if target:
 				if position.distance_to(target.position) > distance:
 					look_at(target.position)
-					velocity = (-basis.z + Vector3.DOWN * 10) * SPEED 
+					velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
 					move_and_slide()
 					$AnimationPlayer.play("chicken_walk")
 				else:

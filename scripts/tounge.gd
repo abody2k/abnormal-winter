@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 40.0
+const SPEED = 140.0
 const JUMP_VELOCITY = 4.5
 signal death
 
@@ -17,7 +17,6 @@ var current_target = Vector3.ZERO
 var index = 0
 
 func _ready():
-	print((get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index))
 	current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 
 
@@ -25,6 +24,7 @@ func _physics_process(delta):
 	
 	match mode:
 		MODES.WALKING:
+			$BoneAttachment3D/enemy.monitoring = false
 			if position.distance_to(Vector3(current_target.x,position.y,current_target.z) ) > 10.0:
 				
 				#look_at(Vector3(current_target.x,position.y,current_target.z))
@@ -44,9 +44,12 @@ func _physics_process(delta):
 					return
 				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 		MODES.CHASING:
+			$BoneAttachment3D/enemy.monitoring = false
 			$AnimationPlayer.play("tounge_move")
-			if position.distance_to(target.position) < 15:
+			print(position.distance_to(target.position))
+			if position.distance_to(target.position) < 19:
 				mode = MODES.ATTACKING
+				
 			else:
 				look_at(Vector3(target.position.x,position.y,target.position.z))
 				velocity =( -basis.z + Vector3.DOWN ) * SPEED
@@ -55,20 +58,31 @@ func _physics_process(delta):
 				rotation.y = atan2(dir.x,dir.z)
 				move_and_slide()
 				$AnimationPlayer.play("tounge_move")
+				
+				
 		MODES.ATTACKING:
-			if position.distance_to(target.position) >= 15:
+			print("heeeee")
+			if position.distance_to(target.position) >= 19:
 				mode = MODES.CHASING
+				print("5555555")
 			else:
 				var dir = (Vector3(target.position.x,position.y,target.position.z) - position).normalized()
 				dir.y=0
 				rotation.y = atan2(dir.x,dir.z)
-				$BoneAttachment3D/enemy.monitoring = true
+				#$Attack.start()
+				var x = create_tween()
+				#$BoneAttachment3D/enemy
+				print("hoooooo")
+				x.tween_callback(enabled).set_delay(0.2)
 				$AnimationPlayer.play("tounge_attack")
 				
 func _exit_tree():
 	death.emit(self)
 
-
+func enabled():
+	$BoneAttachment3D/enemy.monitoring = true
+	print("done done enabled")
+	
 
 func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)
@@ -109,5 +123,10 @@ func _on_enemy_body_entered(body):
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "tounge_attack":
-		$BoneAttachment3D/enemy.monitoring = false
 		
+		return
+		
+
+
+func _on_attack_timeout():
+	$BoneAttachment3D/enemy.monitoring = true

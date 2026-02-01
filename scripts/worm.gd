@@ -19,7 +19,6 @@ var target : CharacterBody3D = null
 
 
 func _ready():
-	print((get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index))
 	current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 
 
@@ -35,8 +34,7 @@ func _physics_process(delta):
 				rotation.y = atan2(dir.x,dir.z)
 				velocity =( basis.z + Vector3.DOWN ) * SPEED 
 				move_and_slide()
-				if is_on_wall():
-					velocity = velocity.slide(get_wall_normal())
+
 				$AnimationPlayer.play("worm_moving")
 				$AnimationPlayer.speed_scale = 2
 			else:
@@ -49,7 +47,8 @@ func _physics_process(delta):
 				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 		MODES.CHASING:
 			$AnimationPlayer.play("worm_moving")
-			if position.distance_to(target.position) < 20:
+
+			if position.distance_to(target.position) < 17:
 				mode = MODES.ATTACKING
 			else:
 				look_at(Vector3(target.position.x,position.y,target.position.z))
@@ -59,16 +58,19 @@ func _physics_process(delta):
 				rotation.y = atan2(dir.x,dir.z)
 				move_and_slide()
 		MODES.ATTACKING:
-			if position.distance_to(target.position) >= 20:
+			if position.distance_to(target.position) >= 17:
 				mode = MODES.CHASING
 			else:
-				print("HEREEEEEEEE")
 				var dir = (target.position - position).normalized()
 				dir.y=0
 				rotation.y = atan2(dir.x,dir.z)
+				#$attack.start()
+				var x = create_tween()
 				
-				print("attaxkinf")
-				$BoneAttachment3D/enemy.monitoring = true
+				x.tween_callback(func () : $BoneAttachment3D/enemy.monitoring = true).set_delay(0.2)
+				#x.tween_property($BoneAttachment3D/enemy,"monitoring",true,0.2)
+				$AnimationPlayer.speed_scale =2
+				#$BoneAttachment3D/enemy.monitoring = true
 				$AnimationPlayer.play("worm_attack")
 				
 func _exit_tree():
@@ -115,5 +117,10 @@ func _on_area_3d_body_entered(body):
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "worm_attack":
+		#pass
 		$BoneAttachment3D/enemy.monitoring = false
 		
+
+
+func _on_attack_timeout():
+	$BoneAttachment3D/enemy.monitoring = true

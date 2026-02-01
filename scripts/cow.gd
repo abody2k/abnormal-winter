@@ -50,7 +50,7 @@ func _physics_process(delta):
 			move_and_slide()
 			if !target:
 				return
-			look_at(target.position)
+			look_at(Vector3(target.position.x,position.y,target.position.z))
 			$AnimationPlayer.play("cow_attacking")
 
 func _on_detector_body_entered(body):

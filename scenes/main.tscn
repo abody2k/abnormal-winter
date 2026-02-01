@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b71cf0fxoxvb0"]
 
+[ext_resource type="Script" uid="uid://dlxythlgokv7m" path="res://scenes/main.gd" id="1_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c018j2pnq8243" path="res://3D/land_Material_BaseColor.png" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ukwnpclhlpxq" path="res://3D/land_Material_Metallic-Material_Roughness.png" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://b87kjj0c2n4yn" path="res://3D/land_Material_Normal.png" id="3_tbgi4"]
@@ -293,6 +294,7 @@ _data = {
 point_count = 14
 
 [node name="main" type="Node3D" unique_id=780465373]
+script = ExtResource("1_jbj1t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=979879361]
 
@@ -437,4 +439,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -457.9
 [node name="cow" parent="." unique_id=846567232 instance=ExtResource("15_jkv2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -337.22415, -2.0095367, 21.520782)
 
+[node name="Timer" type="Timer" parent="." unique_id=374140776]
+autostart = true
+
+[node name="loc" type="Node3D" parent="." unique_id=1069950818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.68939, -43.224815, -381.98795)
+
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -17,7 +17,7 @@ var target : CharacterBody3D = null
 
 
 @export var SPEED = 20.0
-@export var distance = 10.0
+@export var distance = 200.0
 
 
 const BULLET = preload("res://scenes/bomb.tscn")
@@ -44,6 +44,9 @@ func _physics_process(delta):
 				#$AnimationPlayer.play("chicken_walk")
 				#move_and_slide()
 		MODES.ATTACKING:
+			if !target:
+				return
+			look_at(target.position)
 			$AnimationPlayer.play("cow_attacking")
 
 func _on_detector_body_entered(body):

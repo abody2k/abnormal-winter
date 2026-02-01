@@ -17,7 +17,7 @@ var target : CharacterBody3D = null
 
 
 @export var SPEED = 20.0
-@export var distance = 10.0
+@export var distance = 100.0
 
 
 const BULLET = preload("res://scenes/bullet.tscn")
@@ -30,7 +30,7 @@ func _physics_process(delta):
 			if target:
 				if position.distance_to(target.position) > distance:
 					look_at(target.position)
-					velocity = -basis.z * SPEED
+					velocity = (-basis.z + Vector3.DOWN * 10) * SPEED 
 					move_and_slide()
 					$AnimationPlayer.play("chicken_walk")
 				else:

@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 signal death
 
 
-enum MODES{WALKING, ATTACKING}
+enum MODES{IDLE,WALKING, ATTACKING}
 
 var mode : MODES = MODES.WALKING
 
@@ -36,6 +36,9 @@ func _physics_process(delta):
 			else:
 				$AnimationPlayer.play("tounge_idle")
 				index +=1
+				if index >= (get_tree().get_first_node_in_group("path") as Path3D).curve.point_count:
+					mode = MODES.IDLE
+					return
 				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
 
 func _exit_tree():

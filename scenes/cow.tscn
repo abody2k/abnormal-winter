@@ -988,7 +988,7 @@ radius = 2.7055664
 height = 9.182983
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xabja"]
-radius = 22.827011
+radius = 76.73522
 
 [node name="cow" type="CharacterBody3D" unique_id=846567232]
 script = ExtResource("1_8skmv")

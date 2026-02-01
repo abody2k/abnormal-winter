@@ -47,7 +47,16 @@ func _physics_process(delta):
 					mode = MODES.IDLE
 					return
 				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
-
+		MODES.CHASING:
+			
+			if position.distance_to(target.position) < 10:
+				mode = MODES.ATTACKING
+			else:
+				look_at(Vector3(target.position.x,position.y,target.position.z))
+				velocity =( -basis.z + Vector3.DOWN ) * SPEED 
+				move_and_slide()
+				
+				
 func _exit_tree():
 	death.emit(self)
 
@@ -63,6 +72,7 @@ func _on_detector_body_entered(body):
 	
 	if !target:
 		target = body
+		mode = MODES.CHASING
 
 func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)

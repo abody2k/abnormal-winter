@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 140.0
+const SPEED = 40.0
 const JUMP_VELOCITY = 4.5
 signal death
 

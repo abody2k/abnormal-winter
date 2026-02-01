@@ -17,7 +17,6 @@ func _on_timer_timeout():
 	var worm = WORM.instantiate()
 	add_child(worm)
 	worm.position = $loc.position
-	return
 	var tounge = TOUNGE.instantiate()
 	add_child(tounge)
 	tounge.position = $loc.position

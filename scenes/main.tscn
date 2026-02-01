@@ -440,6 +440,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -457.9
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -337.22415, -2.0095367, 21.520782)
 
 [node name="Timer" type="Timer" parent="." unique_id=374140776]
+wait_time = 5.0
 autostart = true
 
 [node name="loc" type="Node3D" parent="." unique_id=1069950818]

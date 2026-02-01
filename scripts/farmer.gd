@@ -44,10 +44,10 @@ func _physics_process(delta):
 		
 	var x = Input.get_last_mouse_velocity()
 	$arm.rotate_y(x.x * delta * -0.01)
+	
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity = get_gravity() * 10
 		move_and_slide()
-		$AnimationPlayer.play("idle")
 		return
 		
 

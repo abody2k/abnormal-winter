@@ -32,7 +32,7 @@ func grow(type):
 func finished():
 	state = STATES.IDLE
 	get_tree().call_group("machine","update_land",self)
-	animal = 1
+	
 	match  animal:
 		0:
 			var chicken = CHICKEN.instantiate()

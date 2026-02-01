@@ -370,6 +370,9 @@ mesh = SubResource("ArrayMesh_yq6so")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/StaticBody3D" unique_id=1903761465]
 shape = SubResource("ConcavePolygonShape3D_85g3d")
 
+[node name="drop" type="Node3D" parent="house" unique_id=1974828719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
 [node name="Cube_003" type="MeshInstance3D" parent="." unique_id=1878571156]
 transform = Transform3D(-59.622444, 0, 6.720396, 0, 59.999996, 0, -6.720396, 0, -59.622444, 23.68991, -5.621643, -544.28314)
 mesh = SubResource("ArrayMesh_fv21b")
@@ -446,5 +449,10 @@ autostart = true
 [node name="loc" type="Node3D" parent="." unique_id=1069950818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.68939, -43.224815, -381.98795)
 
+[node name="materials" type="Timer" parent="." unique_id=327567910]
+wait_time = 10.0
+autostart = true
+
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]

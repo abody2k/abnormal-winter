@@ -294,8 +294,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_otaqi"]
-radius = 3.2280273
-height = 15.462769
+radius = 3.8725586
+height = 16.338806
 
 [node name="tounge" type="CharacterBody3D" unique_id=1034825025]
 collision_layer = 4
@@ -303,6 +303,7 @@ collision_mask = 11
 script = ExtResource("1_otaqi")
 
 [node name="Armature" type="Node3D" parent="." unique_id=437855546]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature" unique_id=97443777]
 bones/0/name = "Bone"
@@ -392,5 +393,5 @@ skeleton = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_86qqj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1585948256]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.76678467, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2048035, 0)
 shape = SubResource("CapsuleShape3D_otaqi")

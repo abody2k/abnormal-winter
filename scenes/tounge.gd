@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 30.0
+const SPEED = 40.0
 const JUMP_VELOCITY = 4.5
 signal death
 
@@ -24,9 +24,14 @@ func _physics_process(delta):
 		MODES.WALKING:
 			if position.distance_to(Vector3(current_target.x,position.y,current_target.z) ) > 10.0:
 				
-				look_at(Vector3(current_target.x,position.y,current_target.z))
-				velocity =( -basis.z + Vector3.DOWN * 10) * SPEED 
+				#look_at(Vector3(current_target.x,position.y,current_target.z))
+				var dir = (Vector3(current_target.x,position.y,current_target.z) - position).normalized()
+				dir.y=0
+				rotation.y = atan2(dir.x,dir.z)
+				velocity =( basis.z + Vector3.DOWN ) * SPEED 
 				move_and_slide()
+				if is_on_wall():
+					velocity = velocity.slide(get_wall_normal())
 				$AnimationPlayer.play("tounge_move")
 			else:
 				$AnimationPlayer.play("tounge_idle")

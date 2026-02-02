@@ -73,6 +73,7 @@ func _physics_process(delta):
 				$AnimationPlayer.play("tounge_attack")
 				
 func _exit_tree():
+	get_tree().call_group("main","tounge_died")
 	death.emit(self)
 
 func enabled():

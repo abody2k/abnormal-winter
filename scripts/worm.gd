@@ -74,6 +74,7 @@ func _physics_process(delta):
 				$AnimationPlayer.play("worm_attack")
 				
 func _exit_tree():
+	get_tree().call_group("main","worm_died")
 	death.emit(self)
 
 

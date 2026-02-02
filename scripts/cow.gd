@@ -68,6 +68,7 @@ func _physics_process(delta):
 					else:
 						$AnimationPlayer.play("cow_idle")
 func _on_detector_body_entered(body):
+	mode = MODES.IDLE
 	if enemies.has(body):
 		return
 		

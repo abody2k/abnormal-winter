@@ -39,9 +39,12 @@ func _physics_process(delta):
 					$AnimationPlayer.play("chicken_idle")
 					mode = MODES.ATTACKING
 			else:
+
 				if !enemies.is_empty():
 					target = enemies[0]
-
+				if master:
+					mode = MODES.HELP
+					
 
 		MODES.ATTACKING:
 			look_at(target.position)
@@ -60,14 +63,14 @@ func _physics_process(delta):
 						$AnimationPlayer.play("chicken_idle")
 					
 func _on_detector_body_entered(body):
-	mode = MODES.IDLE
+
 	if enemies.has(body):
 		return
 		
 		
 	enemies.append(body)
 	body.death.connect(remove_enemy)
-
+	mode = MODES.IDLE
 
 func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)

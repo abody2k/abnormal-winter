@@ -40,8 +40,11 @@ func _physics_process(delta):
 					$AnimationPlayer.play("cow_idle")
 					mode = MODES.ATTACKING
 			else:
+					
 				if !enemies.is_empty():
 					target = enemies[0]
+				if master:
+					mode = MODES.HELP
 				velocity = ( Vector3.DOWN * 10) * SPEED 
 				move_and_slide()
 				#look_at(Vector3( cos(delta) * 30, position.y, sin(delta) * 30))
@@ -68,14 +71,14 @@ func _physics_process(delta):
 					else:
 						$AnimationPlayer.play("cow_idle")
 func _on_detector_body_entered(body):
-	mode = MODES.IDLE
+	
 	if enemies.has(body):
 		return
 		
 		
 	enemies.append(body)
 	body.death.connect(remove_enemy)
-
+	mode = MODES.IDLE
 
 func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)

@@ -85,7 +85,18 @@ func _physics_process(delta):
 func _exit_tree():
 	death.emit(self)
 
-
+func sorting():
+	var new_arr = []
+	for  i in range(enemies.size()):
+		for j in range(enemies.size()):
+			if j +1 < enemies.size():
+				if position.distance_to(enemies[j].position) < position.distance_to(enemies[i].position):
+					var temp = enemies[j]
+					enemies[j] = enemies[j+1]
+					enemies[j+1] = temp
+					
+		
+		
 func _on_area_3d_body_entered(body):
 
 		
@@ -97,8 +108,10 @@ func _on_area_3d_body_entered(body):
 		body.death.connect(remove_enemy)
 		
 	enemies.append(body)
+	sorting()
 	if !target:
 		target = body
+		
 
 
 

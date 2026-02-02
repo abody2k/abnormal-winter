@@ -57,3 +57,10 @@ func _on_start_button_down():
 
 func _on_leave_button_down():
 	get_tree().quit(0)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "the story":
+		$AnimationPlayer.play("RESET")
+		get_tree().call_group("farmer","start_game")
+	pass # Replace with function body.

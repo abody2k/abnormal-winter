@@ -379,10 +379,10 @@ tracks/4/path = NodePath("land_001/Icosphere:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(2101.7534, 2000, 260.473)]
+"values": [Vector3(2101.7534, 2000, 260.473), Vector3(314.89136, -138.83334, 261.47565)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -396,10 +396,34 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("land_001/Icosphere:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("alien:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_yc10j"]
 resource_name = "the story"
-length = 60.0
+length = 7.38
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -472,6 +496,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(1.2077678, 0, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("alien:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jscy8"]
 _data = {
@@ -540,7 +576,7 @@ mesh = SubResource("ArrayMesh_o6xl0")
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
 [node name="Icosphere" type="MeshInstance3D" parent="land_001" unique_id=2036222562]
-transform = Transform3D(85.688354, -84.008965, 0, 79.986374, 81.58535, 36.688015, -25.684353, -26.197798, 114.25406, 2101.7534, 2000, 260.473)
+transform = Transform3D(120, 0, 0, 0, 120, 0, 0, 0, 120.00001, 2101.7534, 2000, 260.473)
 mesh = SubResource("ArrayMesh_tbgi4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="land_001/Icosphere" unique_id=15036009]
@@ -668,6 +704,7 @@ libraries/ = SubResource("AnimationLibrary_jscy8")
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="farmer"]
 [editable path="truck"]

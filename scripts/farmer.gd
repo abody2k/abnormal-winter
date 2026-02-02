@@ -84,6 +84,7 @@ func _physics_process(delta):
 
 func _exit_tree():
 	death.emit(self)
+	get_tree().reload_current_scene()
 
 func sorting():
 	var new_arr = []

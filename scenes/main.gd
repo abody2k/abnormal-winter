@@ -29,7 +29,7 @@ func _on_timer_timeout():
 		add_child(worm)
 		#worm.position = $loc.position
 		global_worms+=1
-	return
+	
 	if global_tounge < MAXIMUM_NO_OF_TOUNGES :
 		var tounge = TOUNGE.instantiate()
 		add_child(tounge)

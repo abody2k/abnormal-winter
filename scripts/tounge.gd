@@ -14,10 +14,14 @@ var enemies = []
 
 var target : CharacterBody3D = null
 var current_target = Vector3.ZERO
-var index = 0
+var index = 1
+
+var current_curve : Path3D
 
 func _ready():
-	current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
+	current_curve = get_tree().get_nodes_in_group("path").pick_random()
+	position = (current_curve as Path3D).position + (current_curve).curve.get_point_position(0)
+	current_target =(current_curve as Path3D).position + (current_curve).curve.get_point_position(index)
 
 
 func _physics_process(delta):
@@ -39,10 +43,10 @@ func _physics_process(delta):
 			else:
 				$AnimationPlayer.play("tounge_idle")
 				index +=1
-				if index >= (get_tree().get_first_node_in_group("path") as Path3D).curve.point_count:
+				if index >= (current_curve).curve.point_count:
 					mode = MODES.IDLE
 					return
-				current_target =(get_tree().get_first_node_in_group("path") as Path3D).position + (get_tree().get_first_node_in_group("path") as Path3D).curve.get_point_position(index)
+				current_target =(current_curve).position + (current_curve).curve.get_point_position(index)
 		MODES.CHASING:
 			$BoneAttachment3D/enemy.monitoring = false
 			$AnimationPlayer.play("tounge_move")

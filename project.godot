@@ -21,6 +21,7 @@ machine=""
 path=""
 main=""
 allies=""
+farmer=""
 
 [input]
 

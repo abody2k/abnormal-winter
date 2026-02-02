@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dlxythlgokv7m" path="res://scenes/main.gd" id="1_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c018j2pnq8243" path="res://3D/land_Material_BaseColor.png" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ukwnpclhlpxq" path="res://3D/land_Material_Metallic-Material_Roughness.png" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://bndameolw0g7o" path="res://pics/start.png" id="2_muem4"]
 [ext_resource type="Texture2D" uid="uid://b87kjj0c2n4yn" path="res://3D/land_Material_Normal.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b0pbsolav23hr" path="res://3D/factory_house_machine_land_astroid_rock_BaseColor.png" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://ca2owagqlh55l" path="res://3D/factory_house_machine_land_astroid_machine_BaseColor.png" id="5_jbj1t"]
@@ -16,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c5mvdcs7fili4" path="res://3D/factory_house_machine_land_astroid_landmark_BaseColor.png" id="14_og1vs"]
 [ext_resource type="PackedScene" uid="uid://dnnaxwy71tu30" path="res://scenes/cow.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://ym55chfcot8n" path="res://scenes/alien.tscn" id="18_dp3eg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp3eg"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 shading_mode = 0
@@ -319,18 +323,25 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=2007780590]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.202
-anchor_bottom = 0.56600004
-offset_right = 0.29599
-offset_bottom = 0.23196411
+anchor_left = 0.263
+anchor_right = 0.651
+anchor_bottom = 0.79800004
+offset_left = 0.023986816
+offset_right = 0.047973633
+offset_bottom = -0.104003906
+theme_override_styles/panel = SubResource("StyleBoxFlat_dp3eg")
+metadata/_edit_use_anchors_ = true
 
 [node name="start" type="TextureButton" parent="CanvasLayer/Control/Panel" unique_id=1928515304]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.172
-anchor_bottom = 0.109000005
-offset_right = -0.07600021
-offset_bottom = -0.0030021667
+anchor_right = 0.264
+anchor_bottom = 0.193
+offset_left = 157.0
+offset_top = 61.0
+offset_right = 156.992
+offset_bottom = 61.219
+texture_normal = ExtResource("2_muem4")
 
 [node name="leave" type="TextureButton" parent="CanvasLayer/Control/Panel" unique_id=682847218]
 layout_mode = 1
@@ -448,7 +459,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -337.22415, -2.0095367, 21.52
 
 [node name="Timer" type="Timer" parent="." unique_id=374140776]
 wait_time = 10.0
-autostart = true
 
 [node name="loc" type="Node3D" parent="." unique_id=1069950818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.68939, -43.224815, -381.98795)

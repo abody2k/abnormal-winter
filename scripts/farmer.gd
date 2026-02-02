@@ -15,12 +15,12 @@ var loaded = true
 var enemies = []
 var target : CharacterBody3D = null
 
+var is_playing = false
 
 
-
-func _ready():
+func start_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	is_playing = true
 	
 	
 func collect_bag():
@@ -42,6 +42,9 @@ func remove_bag():
 	
 		
 func _physics_process(delta):
+	
+	if not is_playing:
+		return
 	# Add the gravity.
 	if Input.is_action_just_pressed("assemble"):
 		get_tree().call_group("allies","help",self)

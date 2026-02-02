@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 
-enum MODES {IDLE, ATTACKING}
+enum MODES {IDLE, ATTACKING,HELP}
 
 
 var mode : MODES = MODES.IDLE
@@ -23,6 +23,9 @@ var target : CharacterBody3D = null
 const BULLET = preload("res://scenes/bomb.tscn")
 
 signal death
+
+var master
+
 
 func _physics_process(delta):
 	match mode:
@@ -52,7 +55,18 @@ func _physics_process(delta):
 				return
 			look_at(Vector3(target.position.x,position.y,target.position.z))
 			$AnimationPlayer.play("cow_attacking")
-
+		MODES.HELP:
+					if !master:
+						mode= MODES.IDLE
+						return
+					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 20:
+						
+						look_at(Vector3(master.position.x,position.y,master.position.z))
+						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
+						move_and_slide()
+						$AnimationPlayer.play("cow_walking")
+					else:
+						$AnimationPlayer.play("cow_idle")
 func _on_detector_body_entered(body):
 	if enemies.has(body):
 		return
@@ -94,3 +108,8 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _exit_tree():
 	death.emit(self)
+
+
+func help(mast):
+	master = mast
+	mode = MODES.HELP

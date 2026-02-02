@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 func _physics_process(delta):
-	velocity = basis.x * 2 
+	velocity = basis.x * 10
 	var target = move_and_collide(velocity)
 	if target:
 		if target.get_collider().name == "alien":

@@ -47,6 +47,9 @@ func _physics_process(delta):
 			look_at(target.position)
 			$AnimationPlayer.play("chicken_attack")
 		MODES.HELP:
+					if !master:
+						mode= MODES.IDLE
+						return
 					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 20:
 						
 						look_at(Vector3(master.position.x,position.y,master.position.z))
@@ -98,6 +101,7 @@ func _exit_tree():
 	
 	
 	
-func help(master):
+func help(mast):
+	master = mast
 	mode = MODES.HELP
 	pass

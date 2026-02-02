@@ -577,7 +577,7 @@ height = 12.179199
 [sub_resource type="SphereShape3D" id="SphereShape3D_hkter"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7541a"]
-radius = 42.812237
+radius = 200.0
 
 [node name="farmer" type="CharacterBody3D" unique_id=279098992]
 collision_layer = 16
@@ -801,7 +801,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=868903384]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22434235, 5.6658163, 0.24137878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63274384, 28.711716, -16.8535)
 shape = SubResource("SphereShape3D_7541a")
 
 [node name="reloader" type="Timer" parent="." unique_id=1542853443]

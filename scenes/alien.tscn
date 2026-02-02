@@ -996,6 +996,9 @@ radius = 48.608215
 [sub_resource type="SphereShape3D" id="SphereShape3D_u8rjw"]
 radius = 289.4065
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3vbw7"]
+radius = 7.9694886
+
 [node name="alien" type="CharacterBody3D" unique_id=1343542365]
 collision_layer = 4
 collision_mask = 31
@@ -1255,4 +1258,88 @@ collision_mask = 24
 [node name="CollisionShape3D" type="CollisionShape3D" parent="enemies" unique_id=1389813009]
 shape = SubResource("SphereShape3D_u8rjw")
 
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=1230986208]
+transform = Transform3D(3.9802523, 2.4794884, 3.0511303, -2.1251729, -2.2959325, 4.6381025, 3.3077028, -4.4587564, -0.69156706, 70.63038, 5.983836, -55.482548)
+bone_name = "Bone.005"
+bone_idx = 5
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_005/Skeleton3D")
+
+[node name="Area3D" type="Area3D" parent="BoneAttachment3D" unique_id=1850197894]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D/Area3D" unique_id=1918723587]
+shape = SubResource("SphereShape3D_3vbw7")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="." unique_id=1295572199]
+transform = Transform3D(3.9996777, 2.802159, 2.7294958, -3.177051, 0.049452875, 4.604733, 2.2822344, -4.842016, 1.6266365, 76.01101, 15.5558, 22.173227)
+bone_name = "Bone.010"
+bone_idx = 9
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_005/Skeleton3D")
+
+[node name="Area3D" type="Area3D" parent="BoneAttachment3D2" unique_id=1096505474]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D2/Area3D" unique_id=1187573254]
+shape = SubResource("SphereShape3D_3vbw7")
+
+[node name="BoneAttachment3D3" type="BoneAttachment3D" parent="." unique_id=1767328661]
+transform = Transform3D(-0.24473147, 5.5845733, -0.22878933, -3.1770277, 0.049421903, 4.604749, 4.5985093, 0.33135536, 3.169165, 15.120388, 15.556049, 76.587234)
+bone_name = "Bone.015"
+bone_idx = 13
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_005/Skeleton3D")
+
+[node name="Area3D" type="Area3D" parent="BoneAttachment3D3" unique_id=967674142]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D3/Area3D" unique_id=133665503]
+shape = SubResource("SphereShape3D_3vbw7")
+
+[node name="BoneAttachment3D4" type="BoneAttachment3D" parent="." unique_id=498011954]
+transform = Transform3D(3.501508, -2.7768776, 3.365717, -4.273486, -1.311002, 3.3642619, -0.88114816, -4.676525, -2.9416583, 23.863087, 55.670258, -72.11739)
+bone_name = "Bone.020"
+bone_idx = 17
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_005/Skeleton3D")
+
+[node name="Area3D" type="Area3D" parent="BoneAttachment3D4" unique_id=1755682843]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D4/Area3D" unique_id=1561232540]
+shape = SubResource("SphereShape3D_3vbw7")
+
+[node name="BoneAttachment3D5" type="BoneAttachment3D" parent="." unique_id=1591360357]
+transform = Transform3D(3.5132868, -4.353856, -0.02004382, -1.8696697, -1.5319324, 5.0455112, -3.9320233, -3.161766, -2.4170394, -61.281143, 7.0877905, -63.26372)
+bone_name = "Bone.025"
+bone_idx = 21
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_005/Skeleton3D")
+
+[node name="Area3D" type="Area3D" parent="BoneAttachment3D5" unique_id=1199944564]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D5/Area3D" unique_id=1713183305]
+shape = SubResource("SphereShape3D_3vbw7")
+
+[node name="BoneAttachment3D6" type="BoneAttachment3D" parent="." unique_id=1681675530]
+transform = Transform3D(0.07785048, -2.4799137, -5.0143433, -0.6773976, -4.982105, 2.453453, -5.5529056, 0.5729983, -0.36959615, -84.73885, 41.452343, -10.532565)
+bone_name = "Bone.030"
+bone_idx = 25
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature_005/Skeleton3D")
+
+[node name="Area3D" type="Area3D" parent="BoneAttachment3D6" unique_id=1124039730]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D6/Area3D" unique_id=197753408]
+shape = SubResource("SphereShape3D_3vbw7")
+
 [connection signal="body_entered" from="enemies" to="." method="_on_enemies_body_entered"]
+[connection signal="body_entered" from="BoneAttachment3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="BoneAttachment3D2/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="BoneAttachment3D3/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="BoneAttachment3D4/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="BoneAttachment3D5/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="BoneAttachment3D6/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -37,4 +37,7 @@ func _physics_process(delta):
 
 func _on_enemies_body_entered(body):
 	$AnimationPlayer.play("alien_attacking")
-	pass # Replace with function body.
+
+
+func _on_area_3d_body_entered(body):
+	body.queue_free()

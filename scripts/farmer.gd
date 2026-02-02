@@ -10,6 +10,11 @@ var has_bag = false
 signal death
 
 
+var enemies = []
+var target : CharacterBody3D = null
+
+
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -36,11 +41,15 @@ func remove_bag():
 		
 func _physics_process(delta):
 	# Add the gravity.
+	
+	if target:
+		$farmer_rigged/Node3D.look_at(target.position)
 	if Input.is_action_just_pressed("fire"):
 		var bullet = BULLET.instantiate()
 		get_parent().add_child(bullet)
-		bullet.position = $farmer_rigged/gun/aim.global_position
-		bullet.rotation = $farmer_rigged/gun/aim. global_rotation
+		
+		bullet.position = $farmer_rigged/Node3D/gun/aim.global_position
+		bullet.rotation = $farmer_rigged/Node3D/gun/aim. global_rotation
 		
 	var x = Input.get_last_mouse_velocity()
 	$arm.rotate_y(x.x * delta * -0.01)
@@ -68,3 +77,32 @@ func _physics_process(delta):
 
 func _exit_tree():
 	death.emit(self)
+
+
+func _on_area_3d_body_entered(body):
+
+		
+	if enemies.has(target):
+		return
+
+	if !body.is_connected("death",remove_enemy):
+		
+		body.death.connect(remove_enemy)
+		
+	enemies.append(body)
+	if !target:
+		target = body
+
+
+
+func remove_enemy(enemy):
+	enemies = enemies.filter(func (e): return enemy != e)
+	if enemy == target:
+		target = null
+		if enemies.is_empty():
+			return
+		else :
+			target = enemies[0]
+
+func _on_area_3d_body_exited(body):
+	remove_enemy(body)

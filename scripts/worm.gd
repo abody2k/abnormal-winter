@@ -108,7 +108,6 @@ func remove_enemy(enemy):
 			
 func _on_detector_body_exited(body):
 	return
-	remove_enemy(body)
 	
 	
 

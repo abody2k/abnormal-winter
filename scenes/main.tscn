@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c018j2pnq8243" path="res://3D/land_Material_BaseColor.png" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ukwnpclhlpxq" path="res://3D/land_Material_Metallic-Material_Roughness.png" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bndameolw0g7o" path="res://pics/start.png" id="2_muem4"]
+[ext_resource type="Texture2D" uid="uid://qru8xgnucmh6" path="res://pics/startClicked.png" id="3_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://b87kjj0c2n4yn" path="res://3D/land_Material_Normal.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b0pbsolav23hr" path="res://3D/factory_house_machine_land_astroid_rock_BaseColor.png" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://ca2owagqlh55l" path="res://3D/factory_house_machine_land_astroid_machine_BaseColor.png" id="5_jbj1t"]
@@ -307,6 +308,8 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Environment" id="Environment_dp3eg"]
+
 [node name="main" type="Node3D" unique_id=780465373 groups=["main"]]
 script = ExtResource("1_jbj1t")
 
@@ -342,6 +345,7 @@ offset_top = 61.0
 offset_right = 156.992
 offset_bottom = 61.219
 texture_normal = ExtResource("2_muem4")
+texture_pressed = ExtResource("3_dp3eg")
 
 [node name="leave" type="TextureButton" parent="CanvasLayer/Control/Panel" unique_id=682847218]
 layout_mode = 1
@@ -475,6 +479,11 @@ transform = Transform3D(1.56, 0, 1.6284281e-07, 0, 1.56, 0, -1.6284281e-07, 0, 1
 
 [node name="alien" parent="." unique_id=1343542365 instance=ExtResource("18_dp3eg")]
 transform = Transform3D(0.6712938, 0, 0.7411913, 0, 1, 0, -0.7411913, 0, 0.6712938, 216.81516, -106.55898, 287.9295)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1567996128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 227.53131, 0)
+environment = SubResource("Environment_dp3eg")
+current = true
 
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

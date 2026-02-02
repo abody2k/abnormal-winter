@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bndameolw0g7o" path="res://pics/start.png" id="2_muem4"]
 [ext_resource type="Texture2D" uid="uid://qru8xgnucmh6" path="res://pics/startClicked.png" id="3_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://b87kjj0c2n4yn" path="res://3D/land_Material_Normal.png" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://wfijgffnm806" path="res://pics/exit.png" id="4_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://b0pbsolav23hr" path="res://3D/factory_house_machine_land_astroid_rock_BaseColor.png" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://ca2owagqlh55l" path="res://3D/factory_house_machine_land_astroid_machine_BaseColor.png" id="5_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://clkov1u3qn5sq" path="res://pics/exitClicked.png" id="5_yc10j"]
 [ext_resource type="Script" uid="uid://nmo5a1r3b6mx" path="res://scripts/machine.gd" id="6_choun"]
 [ext_resource type="Texture2D" uid="uid://6jmu08q6y4q1" path="res://3D/factory_house_machine_land_astroid_house_BaseColor.png" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cah5nlarut5lx" path="res://scenes/farmer.tscn" id="9_85g3d"]
@@ -357,10 +359,16 @@ texture_pressed = ExtResource("3_dp3eg")
 [node name="leave" type="TextureButton" parent="CanvasLayer/Control/Panel" unique_id=682847218]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.172
-anchor_bottom = 0.109000005
-offset_right = -0.07600021
-offset_bottom = -0.0030021667
+anchor_left = 0.24800001
+anchor_top = 0.356
+anchor_right = 0.71400005
+anchor_bottom = 0.76400006
+offset_left = 0.14399719
+offset_top = -0.052001953
+offset_right = -0.15802002
+offset_bottom = 0.011962891
+texture_normal = ExtResource("4_gqmmt")
+texture_pressed = ExtResource("5_yc10j")
 
 [node name="land_001" type="MeshInstance3D" parent="." unique_id=611938833]
 material_override = SubResource("StandardMaterial3D_tefeu")
@@ -493,6 +501,7 @@ environment = SubResource("Environment_dp3eg")
 current = true
 
 [connection signal="button_down" from="CanvasLayer/Control/Panel/start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Panel/leave" to="." method="_on_leave_button_down"]
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]

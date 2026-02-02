@@ -52,4 +52,7 @@ func _on_materials_timeout():
 func _on_start_button_down():
 	$CanvasLayer/Control/Panel.visible = false
 	get_tree().call_group("farmer","start_game")
-	pass # Replace with function body.
+
+
+func _on_leave_button_down():
+	get_tree().quit(0)

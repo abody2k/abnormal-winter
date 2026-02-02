@@ -576,6 +576,17 @@ height = 12.179199
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hkter"]
 
+[sub_resource type="Environment" id="Environment_7541a"]
+background_mode = 1
+glow_enabled = true
+glow_intensity = 0.64
+glow_bloom = 0.27
+fog_mode = 1
+fog_light_color = Color(0.5990774, 0.6312889, 0.68190604, 1)
+fog_light_energy = 0.03
+fog_sun_scatter = 0.29
+fog_density = 1.0
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_7541a"]
 radius = 200.0
 
@@ -796,6 +807,7 @@ spring_length = 17.0
 
 [node name="Camera3D" type="Camera3D" parent="arm" unique_id=1289404808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
+environment = SubResource("Environment_7541a")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1490271538]
 collision_mask = 4

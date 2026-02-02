@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ym55chfcot8n" path="res://scenes/alien.tscn" id="18_dp3eg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp3eg"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.12156863)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 shading_mode = 0
@@ -309,6 +309,13 @@ _data = {
 point_count = 5
 
 [sub_resource type="Environment" id="Environment_dp3eg"]
+tonemap_exposure = 0.41
+tonemap_white = 5.16
+glow_enabled = true
+glow_intensity = 3.94
+glow_bloom = 1.0
+adjustment_enabled = true
+adjustment_saturation = 2.85
 
 [node name="main" type="Node3D" unique_id=780465373 groups=["main"]]
 script = ExtResource("1_jbj1t")
@@ -485,6 +492,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 227.53131, 0)
 environment = SubResource("Environment_dp3eg")
 current = true
 
+[connection signal="button_down" from="CanvasLayer/Control/Panel/start" to="." method="_on_start_button_down"]
 [connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]

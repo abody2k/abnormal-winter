@@ -21,6 +21,7 @@ var is_playing = false
 func start_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	is_playing = true
+	$arm/Camera3D.current = true
 	
 	
 func collect_bag():

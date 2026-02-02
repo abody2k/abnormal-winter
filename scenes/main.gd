@@ -47,3 +47,9 @@ func _on_materials_timeout():
 	add_child(bag)
 	bag.position = $house/drop.position
 	pass # Replace with function body.
+
+
+func _on_start_button_down():
+	$CanvasLayer/Control/Panel.visible = false
+	get_tree().call_group("farmer","start_game")
+	pass # Replace with function body.

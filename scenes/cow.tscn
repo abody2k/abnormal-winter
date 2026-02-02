@@ -990,7 +990,7 @@ height = 9.182983
 [sub_resource type="SphereShape3D" id="SphereShape3D_xabja"]
 radius = 76.73522
 
-[node name="cow" type="CharacterBody3D" unique_id=846567232]
+[node name="cow" type="CharacterBody3D" unique_id=846567232 groups=["allies"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 8
 collision_mask = 29

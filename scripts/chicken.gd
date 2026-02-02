@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 
-enum MODES {IDLE, ATTACKING}
+enum MODES {IDLE, ATTACKING, HELP}
 
 
 var mode : MODES = MODES.IDLE
@@ -15,6 +15,7 @@ var target : CharacterBody3D = null
 
 signal death
 
+var master : CharacterBody3D
 
 
 @export var SPEED = 20.0
@@ -45,7 +46,16 @@ func _physics_process(delta):
 		MODES.ATTACKING:
 			look_at(target.position)
 			$AnimationPlayer.play("chicken_attack")
-
+		MODES.HELP:
+					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 20:
+						
+						look_at(Vector3(master.position.x,position.y,master.position.z))
+						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
+						move_and_slide()
+						$AnimationPlayer.play("chicken_walk")
+					else:
+						$AnimationPlayer.play("chicken_idle")
+					
 func _on_detector_body_entered(body):
 	if enemies.has(body):
 		return
@@ -85,3 +95,9 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _exit_tree():
 	death.emit(self)
+	
+	
+	
+func help(master):
+	mode = MODES.HELP
+	pass

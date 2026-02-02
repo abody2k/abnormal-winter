@@ -630,7 +630,7 @@ radius = 2.1723125
 [sub_resource type="SphereShape3D" id="SphereShape3D_1yv3s"]
 radius = 81.32331
 
-[node name="chicken" type="CharacterBody3D" unique_id=599417448]
+[node name="chicken" type="CharacterBody3D" unique_id=599417448 groups=["allies"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 8
 collision_mask = 13

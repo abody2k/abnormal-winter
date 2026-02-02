@@ -43,7 +43,8 @@ func remove_bag():
 		
 func _physics_process(delta):
 	# Add the gravity.
-	
+	if Input.is_action_just_pressed("assemble"):
+		get_tree().call_group("allies","help")
 	if target:
 		$farmer_rigged/Node3D.look_at(target.position)
 	if Input.is_action_just_pressed("fire") and loaded:

@@ -5,6 +5,13 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 
+
+var hp : int = 100
+
+func take_damage(damage):
+	hp -= damage 
+	
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -26,3 +33,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_enemies_body_entered(body):
+	$AnimationPlayer.play("alien_attacking")
+	pass # Replace with function body.

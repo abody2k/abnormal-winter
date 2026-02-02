@@ -1253,3 +1253,5 @@ collision_mask = 24
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="enemies" unique_id=1389813009]
 shape = SubResource("SphereShape3D_u8rjw")
+
+[connection signal="body_entered" from="enemies" to="." method="_on_enemies_body_entered"]

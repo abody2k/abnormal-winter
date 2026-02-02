@@ -298,7 +298,7 @@ _data = {
 }
 point_count = 14
 
-[node name="main" type="Node3D" unique_id=780465373]
+[node name="main" type="Node3D" unique_id=780465373 groups=["main"]]
 script = ExtResource("1_jbj1t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=979879361]

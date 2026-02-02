@@ -992,7 +992,12 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_s03fr"]
 radius = 48.608215
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_u8rjw"]
+radius = 289.4065
+
 [node name="alien" type="CharacterBody3D" unique_id=1343542365]
+collision_layer = 4
+collision_mask = 31
 script = ExtResource("1_np108")
 
 [node name="Armature_005" type="Node3D" parent="." unique_id=1709849318]
@@ -1242,3 +1247,9 @@ libraries/ = SubResource("AnimationLibrary_s6rwo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2034344023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 55.94529, 0)
 shape = SubResource("SphereShape3D_s03fr")
+
+[node name="enemies" type="Area3D" parent="." unique_id=1192242093]
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemies" unique_id=1389813009]
+shape = SubResource("SphereShape3D_u8rjw")

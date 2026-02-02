@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bioh70up8se6x" path="res://scripts/farmer.gd" id="1_hkter"]
 [ext_resource type="Texture2D" uid="uid://cfjdx8whd5yb" path="res://3D/bag_bag_Base_color.png" id="4_7541a"]
 [ext_resource type="Texture2D" uid="uid://dc46w4sfo2vaf" path="res://3D/farmer_gun_BaseColor.png" id="4_wv3kr"]
-[ext_resource type="Texture2D" uid="uid://deweg1g0qxnfn" path="res://pics/sky.png" id="5_rov4t"]
+[ext_resource type="Sky" uid="uid://dp46hej1kv240" path="res://new_sky.tres" id="5_rov4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dtae"]
 resource_name = "bag"
@@ -577,16 +577,11 @@ height = 12.179199
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hkter"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_go23t"]
-panorama = ExtResource("5_rov4t")
-
-[sub_resource type="Sky" id="Sky_loie6"]
-sky_material = SubResource("PanoramaSkyMaterial_go23t")
-
 [sub_resource type="Environment" id="Environment_7541a"]
 background_mode = 2
-sky = SubResource("Sky_loie6")
+sky = ExtResource("5_rov4t")
 glow_enabled = true
+glow_intensity = 2.83
 glow_bloom = 0.07
 glow_hdr_threshold = 0.29
 glow_hdr_scale = 2.44

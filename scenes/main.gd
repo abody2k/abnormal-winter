@@ -51,7 +51,8 @@ func _on_materials_timeout():
 
 func _on_start_button_down():
 	$CanvasLayer/Control/Panel.visible = false
-	get_tree().call_group("farmer","start_game")
+	$AnimationPlayer.play("the story")
+	#get_tree().call_group("farmer","start_game")
 
 
 func _on_leave_button_down():

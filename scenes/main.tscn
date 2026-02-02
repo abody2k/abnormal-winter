@@ -13,8 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://0tp4nkjuq0kl" path="res://3D/factory_house_machine_land_astroid_factory_BaseColor.png" id="11_jscy8"]
 [ext_resource type="PackedScene" uid="uid://e50jiihbq56e" path="res://scenes/land.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bsostuna7dxsh" path="res://scenes/bag.tscn" id="12_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://ddfujy4k4jle" path="res://scenes/tounge.tscn" id="13_trceg"]
-[ext_resource type="PackedScene" uid="uid://d11i4s3gascsk" path="res://scenes/worm.tscn" id="14_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c5mvdcs7fili4" path="res://3D/factory_house_machine_land_astroid_landmark_BaseColor.png" id="14_og1vs"]
 [ext_resource type="PackedScene" uid="uid://dnnaxwy71tu30" path="res://scenes/cow.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://ym55chfcot8n" path="res://scenes/alien.tscn" id="18_dp3eg"]
@@ -291,12 +289,19 @@ shadow_mesh = SubResource("ArrayMesh_ya4ey")
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
 
+[sub_resource type="Curve3D" id="Curve3D_dp3eg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -81.911316, 11.961842, -25.04541, 0, 0, 0, 0, 0, 0, -160.67299, -53.22508, -33.48874, 0, 0, 0, 0, 0, 0, -247.81776, -92.84323, -43.283325, 0, 0, 0, 0, 0, 0, -320.34918, -92.84331, 22.131744, 0, 0, 0, 0, 0, 0, -367.21637, -92.84331, 131.48856, 0, 0, 0, 0, 0, 0, -330.7641, -92.84331, 199.18561, 0, 0, 0, 0, 0, 0, -273.482, -92.84331, 259.07147, 0, 0, 0, 0, 0, 0, -229.21846, -92.843185, 360.61707, 0, 0, 0, 0, 0, 0, -175.43501, -92.843185, 448.29984),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
 [sub_resource type="Curve3D" id="Curve3D_a8y0u"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -36.403, 0, -76.11542, 0, 0, 0, 0, 0, 0, -207.3872, 0, -18.75299, 0, 0, 0, 0, 0, 0, -414.77448, 0, 6.6188354, 0, 0, 0, 0, 0, 0, -560.99414, 0, 42.46057, 0, 0, 0, 0, 0, 0, -519.68176, 0, 79.63049, 0, 0, 0, 0, 0, 0, -475.78986, 0, 142.92645, 0, 0, 0, 0, 0, 0, -414.76727, 0, 187.84619, 0, 0, 0, 0, 0, 0, -427.79938, 12.448872, 288.25708, 0, 0, 0, 0, 0, 0, -468.50464, -9.286564, 384.3144, 0, 0, 0, 0, 0, 0, -395.93323, -21.355076, 511.40613, 0, 0, 0, 0, 0, 0, -438.98822, 0, 520.66046, 0, 0, 0, 0, 0, 0, -349.14874, 0, 520.66046, 0, 0, 0, 0, 0, 0, -263.39294, 0, 485.9498, 0, 0, 0, 0, 0, 0, -218.4732, 0, 434.90463),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 127.55383, 3.4332275e-05, -37.962402, 0, 0, 0, 0, 0, 0, -12.147949, 3.4332275e-05, -119.96121, 0, 0, 0, 0, 0, 0, -115.40576, 3.4332275e-05, -186.77504, 0, 0, 0, 0, 0, 0, -194.36755, 3.4332275e-05, -259.66287, 0, 0, 0, 0, 0, 0, -276.36633, 3.4332275e-05, -362.92062),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 14
+point_count = 5
 
 [node name="main" type="Node3D" unique_id=780465373 groups=["main"]]
 script = ExtResource("1_jbj1t")
@@ -430,24 +435,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -387.1882, -1.3814805, -3.078
 [node name="Area3D6" parent="." unique_id=994107326 instance=ExtResource("12_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -377.16757, -1.3814805, -3.0784225)
 
-[node name="tounge" parent="." unique_id=1034825025 instance=ExtResource("13_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.6973, -45.422752, -491.27347)
-
 [node name="path" type="Path3D" parent="." unique_id=323992303 groups=["path"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.75586, -33.256306, -406.31937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.91069, -33.256306, -406.31937)
+curve = SubResource("Curve3D_dp3eg")
+
+[node name="path2" type="Path3D" parent="." unique_id=202374814 groups=["path"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.75586, 18.321865, 328.73068)
 curve = SubResource("Curve3D_a8y0u")
-
-[node name="worm" parent="." unique_id=932080827 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -407.86182)
-
-[node name="worm2" parent="." unique_id=1368103292 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -497.99426)
-
-[node name="worm3" parent="." unique_id=1727675650 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -367.85242)
-
-[node name="worm4" parent="." unique_id=2132354486 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.14841, -56.37789, -457.98486)
 
 [node name="cow" parent="." unique_id=846567232 instance=ExtResource("15_jkv2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -337.22415, -2.0095367, 21.520782)

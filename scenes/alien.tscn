@@ -134,6 +134,7 @@ bind/32/pose = Transform3D(-0.13550416, -0.10119062, 0.05786429, 0.07019629, -1.
 
 [sub_resource type="Animation" id="Animation_e0b3e"]
 resource_name = "alien_attacking"
+loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
 tracks/0/enabled = true

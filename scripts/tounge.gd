@@ -72,9 +72,13 @@ func _physics_process(delta):
 				x.tween_callback(enabled).set_delay(0.2)
 				$AnimationPlayer.play("tounge_attack")
 				
+
+
 func _exit_tree():
 	get_tree().call_group("main","tounge_died")
 	death.emit(self)
+	
+	
 
 func enabled():
 	$BoneAttachment3D/enemy.monitoring = true

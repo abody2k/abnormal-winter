@@ -506,4 +506,5 @@ current = true
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]
 
+[editable path="farmer"]
 [editable path="truck"]

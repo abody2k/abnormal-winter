@@ -2,20 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://7xltw7h3c3yd" path="res://3D/plant_Material_1.png" id="1_a88lo"]
 [ext_resource type="Script" uid="uid://mw5o4oqml5bx" path="res://scripts/plant.gd" id="1_m5w0e"]
-[ext_resource type="Texture2D" uid="uid://b5kqw50stf8r6" path="res://3D/plant_Material.004_Metallic-Material.png" id="2_m5w0e"]
-[ext_resource type="Texture2D" uid="uid://1gsmj4w5s0m1" path="res://3D/plant_Material.png" id="3_toh6u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q2fk"]
 resource_name = "Material.004"
 cull_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("1_a88lo")
-metallic = 1.0
-metallic_texture = ExtResource("2_m5w0e")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("2_m5w0e")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("3_toh6u")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qn40i"]
 resource_name = "plant_tree_obj_low_001"

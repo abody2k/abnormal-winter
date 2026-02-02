@@ -576,8 +576,8 @@ height = 12.179199
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hkter"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7541a"]
-size = Vector3(46.75038, 21.685913, 56.47751)
+[sub_resource type="SphereShape3D" id="SphereShape3D_7541a"]
+radius = 42.812237
 
 [node name="farmer" type="CharacterBody3D" unique_id=279098992]
 collision_layer = 16
@@ -802,7 +802,11 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=868903384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22434235, 5.6658163, 0.24137878)
-shape = SubResource("BoxShape3D_7541a")
+shape = SubResource("SphereShape3D_7541a")
+
+[node name="reloader" type="Timer" parent="." unique_id=1542853443]
+one_shot = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="reloader" to="." method="_on_reloader_timeout"]

@@ -10,6 +10,8 @@ var has_bag = false
 signal death
 
 
+var loaded = true
+
 var enemies = []
 var target : CharacterBody3D = null
 
@@ -44,13 +46,17 @@ func _physics_process(delta):
 	
 	if target:
 		$farmer_rigged/Node3D.look_at(target.position)
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("fire") and loaded:
 		var bullet = BULLET.instantiate()
 		get_parent().add_child(bullet)
-		
+		loaded = false
+		$reloader.start()
 		bullet.position = $farmer_rigged/Node3D/gun/aim.global_position
 		bullet.rotation = $farmer_rigged/Node3D/gun/aim. global_rotation
-		
+	
+	else:
+		pass
+		#TODO play a sound for jamming
 	var x = Input.get_last_mouse_velocity()
 	$arm.rotate_y(x.x * delta * -0.01)
 	
@@ -106,3 +112,8 @@ func remove_enemy(enemy):
 
 func _on_area_3d_body_exited(body):
 	remove_enemy(body)
+
+
+func _on_reloader_timeout():
+	loaded = true
+	pass # Replace with function body.

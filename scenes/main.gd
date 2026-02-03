@@ -45,7 +45,8 @@ func tounge_died():
 func _on_materials_timeout():
 	var bag = FOOD.instantiate()
 	add_child(bag)
-	bag.position = $house/drop.position
+	
+	bag.position = $land_001/house/drop.global_position
 	pass # Replace with function body.
 
 

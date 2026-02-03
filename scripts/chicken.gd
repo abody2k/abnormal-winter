@@ -71,12 +71,12 @@ func _physics_process(delta):
 					if !alien:
 						mode= MODES.IDLE
 						return
-					if position.distance_to(Vector3(alien.position.x,position.y,alien.position.z))> 20:
+					if position.distance_to(Vector3(alien.position.x,position.y,alien.position.z))> 80:
 						
 						look_at(Vector3(alien.position.x,position.y,alien.position.z))
 						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
 						move_and_slide()
-						$AnimationPlayer.play("cow_walking")
+						$AnimationPlayer.play("chicken_walk")
 					else:
 						target = alien
 						mode = MODES.ATTACKING						

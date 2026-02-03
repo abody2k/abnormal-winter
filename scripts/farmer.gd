@@ -46,7 +46,11 @@ func _physics_process(delta):
 	
 	if not is_playing:
 		return
-	# Add the gravity.
+
+	if Input.is_action_just_pressed("attack_alien"):
+		get_tree().call_group("allies","go_fight_alien")
+		
+		
 	if Input.is_action_just_pressed("assemble"):
 		get_tree().call_group("allies","help",self)
 	if target:

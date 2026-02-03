@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 
-enum MODES {IDLE, ATTACKING,HELP}
+enum MODES {IDLE, ATTACKING,HELP,ATTACK_ALIEN}
 
 
 var mode : MODES = MODES.IDLE
@@ -25,7 +25,11 @@ const BULLET = preload("res://scenes/bomb.tscn")
 signal death
 
 var master
+var alien : CharacterBody3D = null
 
+func _ready():
+	
+	alien = get_tree().get_first_node_in_group("alien")
 
 func _physics_process(delta):
 	match mode:

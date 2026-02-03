@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dnnaxwy71tu30" path="res://scenes/cow.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://ym55chfcot8n" path="res://scenes/alien.tscn" id="18_dp3eg"]
 [ext_resource type="Sky" uid="uid://dp46hej1kv240" path="res://new_sky.tres" id="21_yc10j"]
+[ext_resource type="PackedScene" uid="uid://ubkjq0em2qhe" path="res://scenes/duck.tscn" id="26_2wyq8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og1vs"]
 texture = ExtResource("2_og1vs")
@@ -324,7 +325,8 @@ glow_enabled = true
 glow_intensity = 3.94
 glow_bloom = 1.0
 adjustment_enabled = true
-adjustment_saturation = 2.85
+adjustment_brightness = 1.29
+adjustment_saturation = 1.62
 
 [sub_resource type="Animation" id="Animation_gqmmt"]
 length = 0.001
@@ -475,38 +477,174 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("CanvasLayer/Control/labels:visible")
+tracks/12/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:visible_characters")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:visible_characters")
+tracks/13/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:text")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": ["It all started after a nuclear winter, a portion of land was floating in space, but then a huge asteroid came along"]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:text")
+tracks/14/path = NodePath("Camera3D:environment:glow_bloom")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Camera3D:environment:adjustment_saturation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.62]
+}
+
+[sub_resource type="Animation" id="Animation_vxglm"]
+resource_name = "ending"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:environment:glow_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.04]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:environment:glow_bloom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.0194197, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.6666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 45.531, 0), Vector3(0, 258.531, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:environment:adjustment_saturation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.0102139),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.62]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/labels:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["It all started after a nuclear winter, a portion of land was floating in space, but then a huge asteroid came along"]
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.33333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "You managed to beat the aliens! thanks for playing the game XD"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:visible_characters")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.016982),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 65]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Control/Panel:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("duck:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_yc10j"]
@@ -660,6 +798,7 @@ tracks/11/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jscy8"]
 _data = {
 &"RESET": SubResource("Animation_gqmmt"),
+&"ending": SubResource("Animation_vxglm"),
 &"the story": SubResource("Animation_yc10j")
 }
 
@@ -677,7 +816,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="labels" type="TextureRect" parent="CanvasLayer/Control" unique_id=974487760]
-visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = -117.0
@@ -884,12 +1022,16 @@ wait_time = 10.0
 autostart = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1567996128]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 227.53131, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 227.53131, 0)
 environment = SubResource("Environment_dp3eg")
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=957305892]
 libraries/ = SubResource("AnimationLibrary_jscy8")
+
+[node name="duck" parent="." unique_id=836834388 instance=ExtResource("26_2wyq8")]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, -45.604, 205.11731, -239.03496)
+visible = false
 
 [connection signal="button_down" from="CanvasLayer/Control/Panel/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/leave" to="." method="_on_leave_button_down"]

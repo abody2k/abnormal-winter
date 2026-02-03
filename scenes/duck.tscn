@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ubkjq0em2qhe"]
+
+[ext_resource type="ArrayMesh" uid="uid://bo8abdx34cimt" path="res://mesh/duck.tres" id="1_ql0qm"]
+
+[node name="duck" type="Node3D" unique_id=836834388]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
+
+[node name="duck_low_001" type="MeshInstance3D" parent="." unique_id=2084778884]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 4.3711385e-10, 0, -4.3711385e-10, 0.01, 9.779413, 0, 0)
+mesh = ExtResource("1_ql0qm")
+
+[node name="duck_low_002" type="MeshInstance3D" parent="." unique_id=1023971036]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 4.3711385e-10, 0, -4.3711385e-10, 0.01, 18.750378, 0, 0)
+mesh = ExtResource("1_ql0qm")
+
+[node name="duck_low_003" type="MeshInstance3D" parent="." unique_id=1685996217]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 4.3711385e-10, 0, -4.3711385e-10, 0.01, 27.491451, 0, 0)
+mesh = ExtResource("1_ql0qm")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=206321688]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+amount = 100
+lifetime = 10.0
+mesh = ExtResource("1_ql0qm")
+emission_shape = 3
+emission_box_extents = Vector3(10000, 10000, 100)
+spread = 180.0
+gravity = Vector3(0, 0, 100)
+scale_amount_min = 0.01
+scale_amount_max = 0.02

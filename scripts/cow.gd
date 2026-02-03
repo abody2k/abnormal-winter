@@ -82,7 +82,8 @@ func _on_detector_body_entered(body):
 		
 	enemies.append(body)
 	body.death.connect(remove_enemy)
-	mode = MODES.IDLE
+	if mode != MODES.ATTACK_ALIEN:
+		mode = MODES.IDLE
 
 func remove_enemy(enemy):
 	enemies = enemies.filter(func (e): return enemy != e)
@@ -121,3 +122,7 @@ func _exit_tree():
 func help(mast):
 	master = mast
 	mode = MODES.HELP
+
+
+func go_fight_alien():
+	mode = MODES.ATTACK_ALIEN

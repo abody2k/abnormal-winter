@@ -50,7 +50,7 @@ func _physics_process(delta):
 		MODES.CHASING:
 			$BoneAttachment3D/enemy.monitoring = false
 			$AnimationPlayer.play("tounge_move")
-			if position.distance_to(target.position) < 19:
+			if position.distance_to(target.position) < 17:
 				mode = MODES.ATTACKING
 				
 			else:

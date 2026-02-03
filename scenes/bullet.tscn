@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bvca76sqk4owb" path="res://3D/bu;;et_bomb_Material_1.png" id="1_l5glv"]
 [ext_resource type="Script" uid="uid://s683xcfh4n6n" path="res://scripts/bullet.gd" id="1_y25gk"]
+[ext_resource type="AudioStream" uid="uid://pl7nclyibqen" path="res://sound/shot.mp3" id="3_l5glv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhpc5"]
 resource_name = "Material.008"
@@ -64,5 +65,10 @@ shape = SubResource("CapsuleShape3D_mkf8s")
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1502063503]
+stream = ExtResource("3_l5glv")
+volume_db = 20.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

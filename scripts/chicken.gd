@@ -115,6 +115,8 @@ func _on_animation_player_animation_finished(anim_name):
 		var bullet = BULLET.instantiate()
 		get_parent().add_child(bullet)
 		if target == alien:
+			if !target:
+				return
 			$aim.look_at(target.position + Vector3.UP * 70)
 			
 		bullet.position = $aim.global_position

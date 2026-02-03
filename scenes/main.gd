@@ -46,7 +46,7 @@ func _on_materials_timeout():
 	var bag = FOOD.instantiate()
 	add_child(bag)
 	
-	bag.position = $land_001/house/drop.global_position
+	bag.position = $land_001/house/drop.global_position + Vector3(randf_range(-5,5),0,randf_range(-5,5))
 	pass # Replace with function body.
 
 

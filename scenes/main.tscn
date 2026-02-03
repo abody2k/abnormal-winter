@@ -688,7 +688,7 @@ mesh = SubResource("ArrayMesh_yq6so")
 shape = SubResource("ConcavePolygonShape3D_85g3d")
 
 [node name="drop" type="Node3D" parent="land_001/house" unique_id=1974828719]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 1.0430813e-07, 0, -1.0430813e-07, 1.0000001, 0, -0.7579835, 0.31864262)
 
 [node name="Cube_003" type="MeshInstance3D" parent="land_001" unique_id=1878571156]
 transform = Transform3D(-59.622444, 0, 6.720396, 0, 59.999996, 0, -6.720396, 0, -59.622444, 23.68991, -5.621643, -544.28314)
@@ -700,7 +700,7 @@ mesh = SubResource("ArrayMesh_fv21b")
 shape = SubResource("ConcavePolygonShape3D_a8y0u")
 
 [node name="alien" parent="land_001" unique_id=1343542365 instance=ExtResource("18_dp3eg")]
-transform = Transform3D(0.76030385, 0, 0.64956737, 0, 1, 0, -0.64956737, 0, 0.76030385, 185.4009, -59.005104, 246.45387)
+transform = Transform3D(0.76030385, 0, 0.6495673, 0, 1, 0, -0.6495673, 0, 0.76030385, 185.4009, -59.005104, 246.45387)
 
 [node name="farm" type="MeshInstance3D" parent="." unique_id=848467366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -398.4624, -2.0428085, 111.77611)
@@ -777,7 +777,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -485.82092, 2.6630783, -32.79
 transform = Transform3D(1.56, 0, 1.6284281e-07, 0, 1.56, 0, -1.6284281e-07, 0, 1.56, -468.36276, 6.0859447, -33.355125)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1567996128]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 227.53131, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 227.53131, 0)
 environment = SubResource("Environment_dp3eg")
 current = true
 

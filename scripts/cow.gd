@@ -66,7 +66,7 @@ func _physics_process(delta):
 					if !master:
 						mode= MODES.IDLE
 						return
-					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 100:
+					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 30:
 						
 						look_at(Vector3(master.position.x,position.y,master.position.z))
 						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
@@ -123,6 +123,8 @@ func _on_animation_player_animation_finished(anim_name):
 		if !target: 
 			return
 		if target == alien:
+			if !target:
+				return
 			bullet.target=target.position + Vector3.UP * 70
 		else:
 			bullet.target=target.position

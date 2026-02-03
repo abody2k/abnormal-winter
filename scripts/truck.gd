@@ -24,12 +24,13 @@ func _process(delta):
 		if loaded:
 			$reloader.start()
 			loaded = false
+			
 			var bullet = BULLET.instantiate()
 			get_parent().add_child(bullet)
 			bullet.position =$Cube_008/lady/Cylinder_003/aim.global_position
 			bullet.rotation = $Cube_008/lady/Cylinder_003/aim/RayCast3D.global_rotation
 			#bullet.look_at(target.position)
-			bullet.rotate_y(90)
+			#bullet.rotate_y(90)
 
 
 

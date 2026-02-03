@@ -308,11 +308,11 @@ transform = Transform3D(0, -1.3004981e-07, -1.0358123, -1.0358123, 6.5024906e-08
 mesh = SubResource("ArrayMesh_b3y1j")
 
 [node name="lady" type="Node3D" parent="Cube_008" unique_id=780211819]
-transform = Transform3D(1.56, 0, 1.6284281e-07, 0, 1.56, 0, -1.6284281e-07, 0, 1.56, 18.257837, 6.085944, 0)
+transform = Transform3D(1.56, 0, 1.6284281e-07, 0, 1.56, 0, -1.6284281e-07, 0, 1.56, 18.257837, 6.6232486, 0)
 top_level = true
 
 [node name="woman_rigged_001" type="Node3D" parent="Cube_008/lady" unique_id=1827981448]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39797425, 3.6239414, -0.041782912)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39797425, 0.5157051, 3.3533235)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Cube_008/lady/woman_rigged_001" unique_id=198502730]
 bones/0/name = "Bone"
@@ -495,14 +495,14 @@ skin = SubResource("Skin_8l56u")
 skeleton = NodePath("..")
 
 [node name="Cylinder_003" type="MeshInstance3D" parent="Cube_008/lady" unique_id=1483610728]
-transform = Transform3D(-8.6985665e-08, 0, -1.99, 0, 1.99, 0, 1.99, 0, -8.6985665e-08, 0, 0, -0.0010051726)
+transform = Transform3D(-8.6985665e-08, 0, -1.99, 0, 1.99, 0, 1.99, 0, -8.6985665e-08, -1.3399415e-07, -2.4443517, 3.065428)
 mesh = SubResource("ArrayMesh_du8dv")
 
 [node name="aim" type="Node3D" parent="Cube_008/lady/Cylinder_003" unique_id=1358856165]
-transform = Transform3D(-1.0982762e-07, 0, 0.50251245, 0, 0.5025126, 0, -0.5025126, 0, -1.0982758e-07, -4.5840273, 2.1220384, -0.03661621)
+transform = Transform3D(-0.5025126, 0, -1.317931e-07, 0, 0.5025126, 0, 1.3179314e-07, 0, -0.50251245, -4.5840273, 2.1220384, -0.03661621)
 
-[node name="RayCast3D" type="RayCast3D" parent="Cube_008/lady/Cylinder_003/aim" unique_id=752093750]
-target_position = Vector3(0, 0, -200)
+[node name="RayCast3D" type="RayCast3D" parent="Cube_008/lady/Cylinder_003/aim" unique_id=1479821021]
+target_position = Vector3(1000, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_008" unique_id=1065890385]
 

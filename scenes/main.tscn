@@ -702,6 +702,12 @@ shape = SubResource("ConcavePolygonShape3D_a8y0u")
 [node name="alien" parent="land_001" unique_id=1343542365 instance=ExtResource("18_dp3eg")]
 transform = Transform3D(0.76030385, 0, 0.6495673, 0, 1, 0, -0.6495673, 0, 0.76030385, 185.4009, -59.005104, 246.45387)
 
+[node name="truck" parent="land_001" unique_id=1919569211 instance=ExtResource("9_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -485.82092, 2.6630783, -32.79039)
+
+[node name="lady" parent="land_001/truck/Cube_008" parent_id_path=PackedInt32Array(1919569211, 984339105) index="2" unique_id=780211819]
+transform = Transform3D(1.56, 0, 1.6284281e-07, 0, 1.56, 0, -1.6284281e-07, 0, 1.56, -468.36276, 6.0859447, -33.355125)
+
 [node name="farm" type="MeshInstance3D" parent="." unique_id=848467366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -398.4624, -2.0428085, 111.77611)
 visible = false
@@ -770,12 +776,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.68939, -43.224815, -381.
 wait_time = 10.0
 autostart = true
 
-[node name="truck" parent="." unique_id=1919569211 instance=ExtResource("9_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -485.82092, 2.6630783, -32.79039)
-
-[node name="lady" parent="truck/Cube_008" parent_id_path=PackedInt32Array(1919569211, 984339105) index="2" unique_id=780211819]
-transform = Transform3D(1.56, 0, 1.6284281e-07, 0, 1.56, 0, -1.6284281e-07, 0, 1.56, -468.36276, 6.0859447, -33.355125)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1567996128]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 227.53131, 0)
 environment = SubResource("Environment_dp3eg")
@@ -783,6 +783,7 @@ current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=957305892]
 libraries/ = SubResource("AnimationLibrary_jscy8")
+speed_scale = 10.0
 
 [connection signal="button_down" from="CanvasLayer/Control/Panel/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/leave" to="." method="_on_leave_button_down"]
@@ -791,5 +792,5 @@ libraries/ = SubResource("AnimationLibrary_jscy8")
 [connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
+[editable path="land_001/truck"]
 [editable path="farmer"]
-[editable path="truck"]

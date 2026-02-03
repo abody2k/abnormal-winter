@@ -64,4 +64,5 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "the story":
 		$AnimationPlayer.play("RESET")
 		get_tree().call_group("farmer","start_game")
+		$Timer.start()
 	pass # Replace with function body.

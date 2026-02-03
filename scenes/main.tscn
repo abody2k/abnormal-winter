@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://nmo5a1r3b6mx" path="res://scripts/machine.gd" id="6_choun"]
 [ext_resource type="Texture2D" uid="uid://6jmu08q6y4q1" path="res://3D/factory_house_machine_land_astroid_house_BaseColor.png" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cah5nlarut5lx" path="res://scenes/farmer.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cs8igu3p7mlps" path="res://scenes/scattered_animals.tscn" id="9_jscy8"]
 [ext_resource type="PackedScene" uid="uid://ca6mkf2hee8bo" path="res://scenes/truck.tscn" id="9_muem4"]
 [ext_resource type="Texture2D" uid="uid://0tp4nkjuq0kl" path="res://3D/factory_house_machine_land_astroid_factory_BaseColor.png" id="11_jscy8"]
 [ext_resource type="PackedScene" uid="uid://e50jiihbq56e" path="res://scenes/land.tscn" id="11_ya4ey"]
@@ -420,10 +421,34 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("land_001/scattered:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 438.0812, 500)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("land_001/scattered:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_yc10j"]
 resource_name = "the story"
-length = 7.38
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -455,10 +480,10 @@ tracks/2/path = NodePath("Camera3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2, 12.365364, 15.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 227.53131, 0), Vector3(0, 2000, 0)]
+"values": [Vector3(0, 227.53131, 0), Vector3(0, 2000, 0), Vector3(0, 2000, 0), Vector3(0, -400, 500)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -467,10 +492,10 @@ tracks/3/path = NodePath("Camera3D:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 3.34),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 5.0666666, 5.8984547, 7.0784545, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(2.645919, 0, 0), Vector3(-1.4730579, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(2.645919, 0, 3.1415927), Vector3(3.239331, 0, 3.1415927), Vector3(3.7454765, 0, 3.1415927), Vector3(4.4959683, 0, 3.1415927)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -479,10 +504,10 @@ tracks/4/path = NodePath("land_001/Icosphere:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.9666667, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(3.23, 6.233333, 10.9),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(100, 2000, 260.473), Vector3(308.32974, -174.82867, 260.473)]
+"values": [Vector3(100, 3000, 260.473), Vector3(100, 2000, 260.473), Vector3(308.32974, -174.82867, 260.473)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -491,10 +516,10 @@ tracks/5/path = NodePath("land_001:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5.0299997, 7.3333335),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(5.0299997, 7.3333335, 10.633333, 11.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1.2077678, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(1.2077678, 0, 0), Vector3(1.2077678, 0, 0), Vector3(1.4172074, 0, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -507,6 +532,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("land_001/scattered:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(15.135364, 29.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 438.0812, 500), Vector3(7, 438.081, 537)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("land_001/scattered:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15.135364, 29.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.3439035, 0.80285144, 1.1868238)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jscy8"]
@@ -570,6 +619,9 @@ texture_pressed = ExtResource("5_yc10j")
 material_override = SubResource("StandardMaterial3D_tefeu")
 mesh = SubResource("ArrayMesh_o6xl0")
 
+[node name="scattered" parent="land_001" unique_id=1452936683 instance=ExtResource("9_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 438.0812, 500)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="land_001" unique_id=1754958974]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="land_001/StaticBody3D" unique_id=1614168684]
@@ -584,43 +636,43 @@ mesh = SubResource("ArrayMesh_tbgi4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="land_001/Icosphere/StaticBody3D" unique_id=1539953956]
 shape = SubResource("ConcavePolygonShape3D_trceg")
 
-[node name="machine" type="MeshInstance3D" parent="." unique_id=1547196998 groups=["machine"]]
+[node name="machine" type="MeshInstance3D" parent="land_001" unique_id=1547196998 groups=["machine"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -376.11478, 0.29883528, 41.94715)
 mesh = SubResource("ArrayMesh_2f3dj")
 script = ExtResource("6_choun")
 
-[node name="Area3D" type="Area3D" parent="machine" unique_id=1485056672]
+[node name="Area3D" type="Area3D" parent="land_001/machine" unique_id=1485056672]
 collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="machine/Area3D" unique_id=64177099]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land_001/machine/Area3D" unique_id=64177099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.441193, 11.417908, -14.178375)
 shape = SubResource("BoxShape3D_choun")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="machine" unique_id=390359337]
+[node name="StaticBody3D" type="StaticBody3D" parent="land_001/machine" unique_id=390359337]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="machine/StaticBody3D" unique_id=1165075714]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land_001/machine/StaticBody3D" unique_id=1165075714]
 shape = SubResource("ConcavePolygonShape3D_muem4")
 
-[node name="house" type="MeshInstance3D" parent="." unique_id=1202872918]
+[node name="house" type="MeshInstance3D" parent="land_001" unique_id=1202872918]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -460.07968, 35.970657, 23.57531)
 mesh = SubResource("ArrayMesh_yq6so")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="house" unique_id=832118917]
+[node name="StaticBody3D" type="StaticBody3D" parent="land_001/house" unique_id=832118917]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="house/StaticBody3D" unique_id=1903761465]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land_001/house/StaticBody3D" unique_id=1903761465]
 shape = SubResource("ConcavePolygonShape3D_85g3d")
 
-[node name="drop" type="Node3D" parent="house" unique_id=1974828719]
+[node name="drop" type="Node3D" parent="land_001/house" unique_id=1974828719]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Cube_003" type="MeshInstance3D" parent="." unique_id=1878571156]
+[node name="Cube_003" type="MeshInstance3D" parent="land_001" unique_id=1878571156]
 transform = Transform3D(-59.622444, 0, 6.720396, 0, 59.999996, 0, -6.720396, 0, -59.622444, 23.68991, -5.621643, -544.28314)
 mesh = SubResource("ArrayMesh_fv21b")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_003" unique_id=237458364]
+[node name="StaticBody3D" type="StaticBody3D" parent="land_001/Cube_003" unique_id=237458364]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_003/StaticBody3D" unique_id=1416048861]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land_001/Cube_003/StaticBody3D" unique_id=1416048861]
 shape = SubResource("ConcavePolygonShape3D_a8y0u")
 
 [node name="farm" type="MeshInstance3D" parent="." unique_id=848467366]
@@ -635,13 +687,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6546779, 7.721596, 70.1798
 environment = SubResource("Environment_85g3d")
 
 [node name="farmland" parent="." unique_id=1237019634 instance=ExtResource("11_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -369.0719, -2.8673568, 16.980219)
+transform = Transform3D(0.9431879, 0.3322599, 0, -0.3322599, 0.9431879, 0, 0, 0, 1, -369.0719, -2.8673568, 16.980219)
 
 [node name="farmland2" parent="." unique_id=96261249 instance=ExtResource("11_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -369.0719, -2.8673568, 22.244995)
+transform = Transform3D(0.9431879, 0.3322599, 0, -0.3322599, 0.9431879, 0, 0, 0, 1, -369.0719, -2.8673568, 22.244995)
 
 [node name="farmland3" parent="." unique_id=1709212040 instance=ExtResource("11_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -369.0719, -2.8673568, 28.070402)
+transform = Transform3D(0.9431879, 0.3322599, 0, -0.3322599, 0.9431879, 0, 0, 0, 1, -369.0719, -2.8673568, 28.070402)
+
+[node name="farmland4" parent="." unique_id=1238084355 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9431879, 0.3322599, 0, -0.3322599, 0.9431879, 0, 0, 0, 1, -363.52026, -4.823047, 16.980219)
+
+[node name="farmland5" parent="." unique_id=558851024 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9431879, 0.3322599, 0, -0.3322599, 0.9431879, 0, 0, 0, 1, -363.52026, -4.823047, 22.244995)
+
+[node name="farmland6" parent="." unique_id=1004691309 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9431879, 0.3322599, 0, -0.3322599, 0.9431879, 0, 0, 0, 1, -363.52026, -4.823047, 28.070402)
 
 [node name="Area3D" parent="." unique_id=6201389 instance=ExtResource("12_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -398.24786, -1.3814805, -9.434661)
@@ -701,7 +762,7 @@ libraries/ = SubResource("AnimationLibrary_jscy8")
 
 [connection signal="button_down" from="CanvasLayer/Control/Panel/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/leave" to="." method="_on_leave_button_down"]
-[connection signal="body_entered" from="machine/Area3D" to="machine" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="land_001/machine/Area3D" to="land_001/machine" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="materials" to="." method="_on_materials_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -8,10 +8,14 @@ const JUMP_VELOCITY = 4.5
 
 signal death
 
-var hp : int = 1000
+var hp : int = 100
 
 func take_damage(damage):
-	hp -= damage 
+	hp -= damage
+	
+	if hp <= 0:
+		queue_free()
+		
 	
 	
 func _physics_process(delta):
@@ -43,3 +47,7 @@ func _on_enemies_body_entered(body):
 
 func _on_area_3d_body_entered(body):
 	body.queue_free()
+
+
+func _exit_tree():
+	death.emit(self)

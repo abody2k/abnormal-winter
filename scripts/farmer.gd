@@ -96,8 +96,9 @@ func _physics_process(delta):
 		
 
 func _exit_tree():
-	death.emit(self)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().reload_current_scene()
+	
 
 func sorting():
 	var new_arr = []

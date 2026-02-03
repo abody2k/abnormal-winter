@@ -72,3 +72,7 @@ func end_game():
 	$farmer.process_mode = Node.PROCESS_MODE_DISABLED
 	$Camera3D.current = true
 	$AnimationPlayer.play("ending")
+
+
+func _on_bg_music_finished():
+	$bg_music.play()

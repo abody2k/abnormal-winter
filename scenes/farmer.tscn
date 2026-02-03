@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cfjdx8whd5yb" path="res://3D/bag_bag_Base_color.png" id="4_7541a"]
 [ext_resource type="Texture2D" uid="uid://dc46w4sfo2vaf" path="res://3D/farmer_gun_BaseColor.png" id="4_wv3kr"]
 [ext_resource type="Sky" uid="uid://dp46hej1kv240" path="res://new_sky.tres" id="5_rov4t"]
+[ext_resource type="AudioStream" uid="uid://puu548nhsr5s" path="res://sound/horn_of_help.mp3" id="6_loie6"]
+[ext_resource type="AudioStream" uid="uid://djrgmuv4td82g" path="res://sound/attack_alien.mp3" id="7_a2y1s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dtae"]
 resource_name = "bag"
@@ -823,6 +825,12 @@ shape = SubResource("SphereShape3D_7541a")
 
 [node name="reloader" type="Timer" parent="." unique_id=1542853443]
 one_shot = true
+
+[node name="alien_attack" type="AudioStreamPlayer" parent="." unique_id=598614451]
+stream = ExtResource("6_loie6")
+
+[node name="help" type="AudioStreamPlayer" parent="." unique_id=62277878]
+stream = ExtResource("7_a2y1s")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

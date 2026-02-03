@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c018j2pnq8243" path="res://3D/land_Material_BaseColor.png" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ukwnpclhlpxq" path="res://3D/land_Material_Metallic-Material_Roughness.png" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bndameolw0g7o" path="res://pics/start.png" id="2_muem4"]
+[ext_resource type="Texture2D" uid="uid://csqjjpdxjum2q" path="res://pics/hud.png" id="2_og1vs"]
 [ext_resource type="Texture2D" uid="uid://qru8xgnucmh6" path="res://pics/startClicked.png" id="3_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://b87kjj0c2n4yn" path="res://3D/land_Material_Normal.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://wfijgffnm806" path="res://pics/exit.png" id="4_gqmmt"]
@@ -11,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ca2owagqlh55l" path="res://3D/factory_house_machine_land_astroid_machine_BaseColor.png" id="5_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://clkov1u3qn5sq" path="res://pics/exitClicked.png" id="5_yc10j"]
 [ext_resource type="Script" uid="uid://nmo5a1r3b6mx" path="res://scripts/machine.gd" id="6_choun"]
+[ext_resource type="FontFile" uid="uid://uyqolf2h7slj" path="res://fonts/QuirkyRobot.ttf" id="6_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://rrbshpf7sf2h" path="res://pics/bg.png" id="6_y6deb"]
 [ext_resource type="Texture2D" uid="uid://6jmu08q6y4q1" path="res://3D/factory_house_machine_land_astroid_house_BaseColor.png" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cah5nlarut5lx" path="res://scenes/farmer.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cs8igu3p7mlps" path="res://scenes/scattered_animals.tscn" id="9_jscy8"]
@@ -23,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://ym55chfcot8n" path="res://scenes/alien.tscn" id="18_dp3eg"]
 [ext_resource type="Sky" uid="uid://dp46hej1kv240" path="res://new_sky.tres" id="21_yc10j"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp3eg"]
-bg_color = Color(0, 0, 0, 0.12156863)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og1vs"]
+texture = ExtResource("2_og1vs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 shading_mode = 0
@@ -469,10 +472,46 @@ tracks/11/keys = {
 "update": 0,
 "values": [Vector3(185.4009, -59.005104, 246.45387)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/Control/labels:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:visible_characters")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:text")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["It all started after a nuclear winter, a portion of land was floating in space, but then a huge asteroid came along"]
+}
 
 [sub_resource type="Animation" id="Animation_yc10j"]
 resource_name = "the story"
-length = 30.0
+length = 36.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -581,6 +620,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(1.3439035, 0.80285144, 1.1868238)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Control/labels:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 35.6, 35.933334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:visible_characters")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 3, 21.5, 21.9, 23.233334, 26.5, 26.933332, 27.9, 31.333334, 32, 32.2, 32.7),
+"transitions": PackedFloat32Array(1, 1.4640863, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 115, 115, 0, 129, 129, 0, 86, 96, 86, 0, 97]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/Control/labels/RichTextLabel:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 10.001545, 10.466666, 14.3, 15.133333, 21.533333, 22, 26.033333, 26.933332, 31.966667, 32.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": ["It all started after a nuclear winter, a portion of land was floating in space, but then a huge asteroid came along", "It all started after a nuclear winter, a portion of land was floating in space, but then a huge asteroid came along", "then it HIT THE FLAT EARTH!", "then it HIT THE FLAT EARTH!", "And that hit caused the animals to fly away (Normal animals that is)", "And that hit caused the animals to fly away (Normal animals that is)", "Your goal is to defeat the aliens that came along with this falling rock, use the genetically modifed crops to defeat them aliens", "Your goal is to defeat the aliens that came along with this falling rock, use the genetically modifed crops to defeat them aliens", "Use X button to ask for ask the crops for help and Z to order them to attack the alien", "Use X button to ask for ask the crops for help and Z to order them to attack the alien", "Carry the bags into the blue machine to make new crops, you can find extra bags in the red house"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jscy8"]
 _data = {
@@ -601,41 +676,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=2007780590]
+[node name="labels" type="TextureRect" parent="CanvasLayer/Control" unique_id=974487760]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = -117.0
+offset_right = 1152.0
+offset_bottom = 283.0
+texture = ExtResource("6_y6deb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/labels" unique_id=9336110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 169.0
+offset_right = -19.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_pm3ni")
+theme_override_font_sizes/normal_font_size = 45
+text = "It all started after a nuclear winter, a portion of land was floating in space, but then a huge asteroid came along"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=600924263]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.263
-anchor_right = 0.651
-anchor_bottom = 0.79800004
-offset_left = 0.023986816
-offset_right = 0.047973633
-offset_bottom = -0.104003906
-theme_override_styles/panel = SubResource("StyleBoxFlat_dp3eg")
-metadata/_edit_use_anchors_ = true
+anchor_left = 0.18900001
+anchor_top = 0.048
+anchor_right = 0.707
+anchor_bottom = 1.0
+offset_left = 0.27198792
+offset_top = -0.10400009
+offset_right = -0.46398926
+offset_bottom = 2.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_og1vs")
 
 [node name="start" type="TextureButton" parent="CanvasLayer/Control/Panel" unique_id=1928515304]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.264
-anchor_bottom = 0.193
-offset_left = 157.0
-offset_top = 61.0
-offset_right = 156.992
-offset_bottom = 61.219
+anchor_left = 0.44500002
+anchor_top = 0.28800002
+anchor_right = 0.70000005
+anchor_bottom = 0.53800005
+offset_left = -0.22000122
+offset_top = -0.27200317
+offset_right = 271.6661
+offset_bottom = 277.6703
+scale = Vector2(0.358555, 0.358555)
 texture_normal = ExtResource("2_muem4")
 texture_pressed = ExtResource("3_dp3eg")
 
 [node name="leave" type="TextureButton" parent="CanvasLayer/Control/Panel" unique_id=682847218]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.24800001
-anchor_top = 0.356
-anchor_right = 0.71400005
-anchor_bottom = 0.76400006
-offset_left = 0.14399719
-offset_top = -0.052001953
-offset_right = -0.15802002
-offset_bottom = 0.011962891
+anchor_left = 0.386
+anchor_top = 0.5
+anchor_right = 0.703
+anchor_bottom = 0.74500006
+offset_left = 22.944
+offset_top = -16.5
+offset_right = 226.012
+offset_bottom = 229.84497
+scale = Vector2(0.42304537, 0.42304537)
 texture_normal = ExtResource("4_gqmmt")
 texture_pressed = ExtResource("5_yc10j")
 
@@ -783,7 +890,6 @@ current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=957305892]
 libraries/ = SubResource("AnimationLibrary_jscy8")
-speed_scale = 10.0
 
 [connection signal="button_down" from="CanvasLayer/Control/Panel/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/leave" to="." method="_on_leave_button_down"]

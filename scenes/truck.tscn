@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4wqer0w56odk" path="res://3D/truck_wife_gun_wife_BaseColor.png" id="10_oixy6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u4i5b"]
-radius = 400.0
+radius = 200.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcyxm"]
 resource_name = "truck"
@@ -510,7 +510,7 @@ target_position = Vector3(1000, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_bh7du")
 
 [node name="reloader" type="Timer" parent="." unique_id=1110861981]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

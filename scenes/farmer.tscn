@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfjdx8whd5yb" path="res://3D/bag_bag_Base_color.png" id="4_7541a"]
 [ext_resource type="Texture2D" uid="uid://dc46w4sfo2vaf" path="res://3D/farmer_gun_BaseColor.png" id="4_wv3kr"]
 [ext_resource type="Sky" uid="uid://dp46hej1kv240" path="res://new_sky.tres" id="5_rov4t"]
+[ext_resource type="AudioStream" uid="uid://pl7nclyibqen" path="res://sound/shot.mp3" id="6_go23t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dtae"]
 resource_name = "bag"
@@ -823,6 +824,9 @@ shape = SubResource("SphereShape3D_7541a")
 
 [node name="reloader" type="Timer" parent="." unique_id=1542853443]
 one_shot = true
+
+[node name="shooting" type="AudioStreamPlayer" parent="." unique_id=24167259]
+stream = ExtResource("6_go23t")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

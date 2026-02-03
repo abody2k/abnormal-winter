@@ -56,6 +56,7 @@ func _physics_process(delta):
 	if target:
 		$farmer_rigged/Node3D.look_at(target.position)
 	if Input.is_action_just_pressed("fire") and loaded:
+		$shooting.play()
 		var bullet = BULLET.instantiate()
 		get_parent().add_child(bullet)
 		loaded = false

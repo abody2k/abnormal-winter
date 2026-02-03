@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-var SPEED : float = 100.0
+var SPEED : float = 40.0
 const JUMP_VELOCITY = 4.5
 const BULLET = preload("res://scenes/bullet.tscn")
 

@@ -51,3 +51,4 @@ func _on_area_3d_body_entered(body):
 
 func _exit_tree():
 	death.emit(self)
+	get_tree().call_group("main","end_game")

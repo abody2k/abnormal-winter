@@ -65,5 +65,10 @@ func _on_animation_player_animation_finished(anim_name):
 		$AnimationPlayer.play("RESET")
 		get_tree().call_group("farmer","start_game")
 		$Timer.start()
-	elif anim_name == "the ending":
+	elif anim_name == "ending":
 		get_tree().reload_current_scene()
+		
+func end_game():
+	$farmer.process_mode = Node.PROCESS_MODE_DISABLED
+	$Camera3D.current = true
+	$AnimationPlayer.play("ending")

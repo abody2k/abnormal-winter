@@ -94,9 +94,11 @@ func _physics_process(delta):
 		
 		
 		
-
-func _exit_tree():
+func got_hit():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	call_deferred("nothing")
+	
+func nothing():
 	get_tree().reload_current_scene()
 	
 

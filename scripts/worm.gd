@@ -114,7 +114,7 @@ func _on_detector_body_exited(body):
 
 func _on_area_3d_body_entered(body):
 	remove_enemy(body)
-	body.queue_free()
+	body.got_hit()
 
 
 func _on_animation_player_animation_finished(anim_name):

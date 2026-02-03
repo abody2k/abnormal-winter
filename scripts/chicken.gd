@@ -123,7 +123,8 @@ func _on_animation_player_animation_finished(anim_name):
 		bullet.rotation = $aim.global_rotation
 
 
-
+func got_hit():
+	queue_free()
 func _exit_tree():
 	death.emit(self)
 	

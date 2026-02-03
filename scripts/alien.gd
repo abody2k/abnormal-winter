@@ -8,7 +8,7 @@ const JUMP_VELOCITY = 4.5
 
 signal death
 
-var hp : int = 100
+var hp : int = 1000
 
 func take_damage(damage):
 	hp -= damage 

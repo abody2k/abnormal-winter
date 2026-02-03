@@ -71,7 +71,7 @@ func _physics_process(delta):
 					if !alien:
 						mode= MODES.IDLE
 						return
-					if position.distance_to(Vector3(alien.position.x,position.y,alien.position.z))> 80:
+					if position.distance_to(Vector3(alien.position.x,position.y,alien.position.z))> 200:
 						
 						look_at(Vector3(alien.position.x,position.y,alien.position.z))
 						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
@@ -114,6 +114,9 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "chicken_attack":
 		var bullet = BULLET.instantiate()
 		get_parent().add_child(bullet)
+		if target == alien:
+			$aim.look_at(target.position + Vector3.UP * 70)
+			
 		bullet.position = $aim.global_position
 		bullet.rotation = $aim.global_rotation
 

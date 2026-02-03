@@ -66,7 +66,7 @@ func _physics_process(delta):
 					if !master:
 						mode= MODES.IDLE
 						return
-					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 20:
+					if position.distance_to(Vector3(master.position.x,position.y,master.position.z))> 100:
 						
 						look_at(Vector3(master.position.x,position.y,master.position.z))
 						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
@@ -78,7 +78,7 @@ func _physics_process(delta):
 					if !alien:
 						mode= MODES.IDLE
 						return
-					if position.distance_to(Vector3(alien.position.x,position.y,alien.position.z))> 80:
+					if position.distance_to(Vector3(alien.position.x,position.y,alien.position.z))> 200:
 						
 						look_at(Vector3(alien.position.x,position.y,alien.position.z))
 						velocity = (-basis.z + Vector3.DOWN * 1) * SPEED 
@@ -122,7 +122,10 @@ func _on_animation_player_animation_finished(anim_name):
 		var bullet = BULLET.instantiate()
 		if !target: 
 			return
-		bullet.target=target.position
+		if target == alien:
+			bullet.target=target.position + Vector3.UP * 70
+		else:
+			bullet.target=target.position
 		get_parent().add_child(bullet)
 		bullet.position = $aim.global_position
 		bullet.rotation = $aim.global_rotation
